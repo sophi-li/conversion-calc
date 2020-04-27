@@ -1,0 +1,25 @@
+.container {
+  max-width: 75%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  /* min-height: 100vh; */
+  /* height: 100vh; */
+  flex: 1 0 auto;
+  padding: 10px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

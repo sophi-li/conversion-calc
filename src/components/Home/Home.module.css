@@ -1,0 +1,11 @@
+.quickConvertContainer {
+  display: flex;
+}
+
+.howTo {
+  flex: 2;
+  margin-right: 3rem;
+}
+.quickConvert {
+  flex: 3;
+}

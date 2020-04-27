@@ -1,0 +1,15 @@
+.navbar {
+  text-align: right;
+}
+
+.navbar li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px;
+}
+
+.title {
+  color: red;
+  float: left;
+  font-size: 1.5rem;
+}

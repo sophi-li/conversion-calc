@@ -1,0 +1,11 @@
+.footerContainer {
+  background-color: blue;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: tomato;
+  color: white;
+  padding: 1rem;
+}

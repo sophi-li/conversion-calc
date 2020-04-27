@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import styles from "./index.module.css";
 
-import Home from "./components/Home/Home";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
 const App = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Header />
-      <Home />
+      {/* <Home /> */}
+      <Footer />
     </div>
   );
 };
