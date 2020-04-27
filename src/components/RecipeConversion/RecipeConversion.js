@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import ConversionFormula from "./ConversionFormula";
 
 const RecipeConversion = () => {
+  const [rec, setRec] = useState("");
+  function updateRecipe(rec) {
+    setRec(rec);
+  }
   return (
     <div>
-      <h1>RECIPE Conversion </h1>
+      <ConversionFormula updateRecipe={updateRecipe} />
+      <textarea value={rec} rows="20" cols="50"></textarea>
     </div>
   );
 };
