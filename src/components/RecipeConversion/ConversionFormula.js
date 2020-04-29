@@ -74,7 +74,7 @@ const ConversionFormula = ({ updateRecipe }) => {
 
     for (let i = 0; i < originalArray.length; i++) {
       parsedItemArray.push(parseLine(originalArray[i]));
-      console.log("parsed", parsedItemArray);
+      // console.log("parsed", parsedItemArray);
     }
 
     for (let i = 0; i < parsedItemArray.length; i++) {

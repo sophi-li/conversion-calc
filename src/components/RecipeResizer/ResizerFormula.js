@@ -7,13 +7,10 @@ const ResizerFormula = ({ updateSize }) => {
   const [divide, setDivide] = useState(false);
 
   const handleSubmitMultiply = () => {
-    // event.preventDefault();
-    console.log("MULTIPLY", !multiply);
     setMultiply(!multiply);
   };
 
   const handleSubmitDivide = () => {
-    // event.preventDefault();
     setDivide(!divide);
   };
 
@@ -50,14 +47,9 @@ const ResizerFormula = ({ updateSize }) => {
 
     for (let i = 0; i < originalArray.length; i++) {
       parsedItemArray.push(parseLine(originalArray[i]));
-      console.log("parsed", parsedItemArray);
     }
 
     for (let i = 0; i < parsedItemArray.length; i++) {
-      console.log("in the loop", multiplier);
-      console.log("in the loop MULTIPLY", multiply);
-      console.log("in the loop DIVIDE", divide);
-
       let newQty = 0;
       if (multiply) {
         newQty = parsedItemArray[i].qty * multiplier;
@@ -73,36 +65,26 @@ const ResizerFormula = ({ updateSize }) => {
   }
 
   const convertSize = () => {
-    // IF MULPTILY IS CLICKED, use the multiplier to multiply
-    multiply ? console.log("MULT") : console.log("NOPE");
-    divide ? console.log("DIVIDE") : console.log("NO DIVIDE");
-    // console.log("convertsize mulptiy", !multiply);
-    // return recipe * multiplier
-    console.log("convertSize recipe", recipe);
     return convert(recipe);
   };
 
   const handleSubmitRecipe = (event) => {
     event.preventDefault();
     updateSize(convertSize(recipe));
-    // setRecipe("");
-    // console.log(event);
+    setRecipe("");
   };
 
   const handleChangeRecipe = (event) => {
-    console.log("handleChangeRecipe event target", event.target.value);
     setRecipe(event.target.value);
   };
 
   const handleChangeMultiplier = (event) => {
-    console.log("handleChangeMultiplier event target", event.target.value);
     setMultiplier(event.target.value);
   };
 
   return (
     <div>
       <form onSubmit={handleSubmitRecipe}>
-        {/* <form> */}
         <label>
           <p>Enter your recipe with line breaks</p>
         </label>
