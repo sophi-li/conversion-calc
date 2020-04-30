@@ -86,11 +86,14 @@ const ConversionFormula = ({ updateRecipe }) => {
         ing++
       ) {
         let values = Object.values(ingredientsCupsToGrams);
-        if (parsedItemArray[i].ingredient.includes(values[ing][0])) {
-          multiplier = values[ing][1];
+        if (parsedItemArray[i].qty !== null) {
+          if (parsedItemArray[i].ingredient.includes(values[ing][0])) {
+            multiplier = values[ing][1];
+          }
         }
       }
 
+      console.log(parsedItemArray);
       // conversion formula
       if (multiplier) {
         // cups to grams
