@@ -98,7 +98,6 @@ const QuickConvert = ({ updateIngredient }) => {
             let newConversion = Math.round(
               numericQuantity(parsedItemArray[i].qty) * multiplier
             );
-            console.log(parsedItemArray[i]);
             converted = `${parsedItemArray[i].original} → ${newConversion} grams ${parsedItemArray[i].ingredient}`;
             multiplier = 0;
           }
@@ -110,11 +109,7 @@ const QuickConvert = ({ updateIngredient }) => {
             let newConversion = Math.round(
               (numericQuantity(parsedItemArray[i].qty) * multiplier) / 16
             );
-            // originalArray[i] = originalArray[i].concat(
-            //   ` (${newConversion} grams)`
-            // );
             converted = `${parsedItemArray[i].original} →  ${newConversion} grams ${parsedItemArray[i].ingredient}`;
-            // console.log(converted);
             // multiplier = 0;
           }
         }
@@ -127,9 +122,6 @@ const QuickConvert = ({ updateIngredient }) => {
               16 /
               3
             ).toFixed(2);
-            // originalArray[i] = originalArray[i].concat(
-            //   `${parsedItemArray[i].original} →  ${newConversion} grams ${originalArray[i].ingredient}`
-            // );
             converted = `${parsedItemArray[i].original} →  ${newConversion} grams ${parsedItemArray[i].ingredient}`;
             multiplier = 0;
           }
@@ -144,9 +136,6 @@ const QuickConvert = ({ updateIngredient }) => {
                 (parsedItemArray[i].qty / multiplier) *
                 16
               ).toFixed(2);
-              // originalArray[i] = originalArray[i].concat(
-              //   `${parsedItemArray[i].original} →  ${newConversion} tablespoons ${originalArray[i].ingredient}`
-              // );
               converted = `${parsedItemArray[i].original} →  ${newConversion} tablespoons ${parsedItemArray[i].ingredient}`;
               multiplier = 0;
               // grams to CUPS
@@ -155,9 +144,6 @@ const QuickConvert = ({ updateIngredient }) => {
                 let newConversion = (
                   parsedItemArray[i].qty / multiplier
                 ).toFixed(2);
-                // originalArray[i] = originalArray[i].concat(
-                //   `${parsedItemArray[i].original} →  ${newConversion} cups ${originalArray[i].ingredient}`
-                // );
                 converted = `${parsedItemArray[i].original} →  ${newConversion} cups ${parsedItemArray[i].ingredient}`;
                 multiplier = 0;
               }
