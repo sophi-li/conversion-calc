@@ -19,7 +19,7 @@ const Temperature = ({ updateFtoC }) => {
       <FarenheitToC udpdateFarenheit={udpdateFarenheit} />
       <p>Result: {farenheit} °C</p>
       <CelsiusToF updateCelsius={updateCelsius} />
-      <p>Result: {celsius} °F</p>
+      <p>Result: {celsius}</p>
     </div>
   );
 };

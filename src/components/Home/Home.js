@@ -15,7 +15,7 @@ const Home = () => {
         <h2>How to Use It</h2>
 
         <p>
-          The calculator will understand most yummy things you throw at it. For
+          The calculator will understand most yummy things you feed it. For
           example:
         </p>
         <ul>
