@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Home.module.css";
 import QuickConvert from "../QuickConvert/QuickConvert";
-// import numericQuantity from "numeric-quantity";
 
 const Home = () => {
   const [ingredient, setIngredient] = useState("");
@@ -11,7 +10,7 @@ const Home = () => {
   };
 
   return (
-    <section className={styles.quickConvertContainer}>
+    <section className={styles.homeContainer}>
       <div className={styles.howTo}>
         <h2>How to Use It</h2>
 

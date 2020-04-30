@@ -1,11 +1,14 @@
 .footerContainer {
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .footer {
   flex-shrink: 0;
-  text-align: center;
-  background-color: tomato;
+  text-align: right;
+  /* background-color: tomato; */
   color: white;
-  padding: 1rem;
+  /* padding: 1rem; */
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  border-top: 1px solid gray;
 }

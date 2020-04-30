@@ -179,7 +179,7 @@ const ConversionFormula = ({ updateRecipe }) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        <p>Enter your recipe with line breaks</p>
+        <p>Enter your recipe here:</p>
       </label>
       <textarea
         value={recipe}

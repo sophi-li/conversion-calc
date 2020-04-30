@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./ResizerFormula.module.css";
 
 const ResizerFormula = ({ updateSize }) => {
   const [recipe, setRecipe] = useState("");
@@ -83,7 +84,7 @@ const ResizerFormula = ({ updateSize }) => {
   };
 
   return (
-    <div>
+    <div className={styles.resizerFormulaContatiner}>
       <form onSubmit={handleSubmitRecipe}>
         <label>
           <p>Enter your recipe with line breaks</p>
@@ -95,17 +96,20 @@ const ResizerFormula = ({ updateSize }) => {
           rows="20"
           cols="50"
         ></textarea>
-        <input
-          type="number"
-          value={multiplier}
-          onChange={handleChangeMultiplier}
-        />
-        <button type="submit" value="multiply" onClick={handleSubmitMultiply}>
-          Multiply
-        </button>
-        <button type="submit" value="divide" onClick={handleSubmitDivide}>
-          Divide
-        </button>
+
+        <div>
+          <input
+            type="number"
+            value={multiplier}
+            onChange={handleChangeMultiplier}
+          />
+          <button type="submit" value="multiply" onClick={handleSubmitMultiply}>
+            Multiply
+          </button>
+          <button type="submit" value="divide" onClick={handleSubmitDivide}>
+            Divide
+          </button>
+        </div>
       </form>
     </div>
   );

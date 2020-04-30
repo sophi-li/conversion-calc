@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import numericQuantity from "numeric-quantity";
-
+import styles from "./QuickConvert.module.css";
 const QuickConvert = ({ updateIngredient }) => {
   const [recipe, setRecipe] = useState("");
 
@@ -36,6 +36,7 @@ const QuickConvert = ({ updateIngredient }) => {
   };
 
   let multiplier = 0;
+  let converted = "";
   const tablespoon = ["tablespoon", "tablespoons", "tbs", "tbs."];
   const teaspoon = ["teaspoon", "teaspoons", "tsp", "tsp."];
   const cup = ["cup", "cups", "c."];
@@ -74,7 +75,6 @@ const QuickConvert = ({ updateIngredient }) => {
 
     for (let i = 0; i < originalArray.length; i++) {
       parsedItemArray.push(parseLine(originalArray[i]));
-      console.log("parsed", parsedItemArray);
     }
 
     for (let i = 0; i < parsedItemArray.length; i++) {
@@ -98,9 +98,7 @@ const QuickConvert = ({ updateIngredient }) => {
             let newConversion = Math.round(
               numericQuantity(parsedItemArray[i].qty) * multiplier
             );
-            originalArray[i] = originalArray[i].concat(
-              ` (${newConversion} grams)`
-            );
+            converted = `${newConversion} grams ${parsedItemArray[i].ingredient}`;
             multiplier = 0;
           }
         }
@@ -111,10 +109,12 @@ const QuickConvert = ({ updateIngredient }) => {
             let newConversion = Math.round(
               (numericQuantity(parsedItemArray[i].qty) * multiplier) / 16
             );
-            originalArray[i] = originalArray[i].concat(
-              ` (${newConversion} grams)`
-            );
-            multiplier = 0;
+            // originalArray[i] = originalArray[i].concat(
+            //   ` (${newConversion} grams)`
+            // );
+            converted = `${newConversion} grams ${originalArray[i].ingredient}`;
+            console.log(converted);
+            // multiplier = 0;
           }
         }
 
@@ -162,7 +162,8 @@ const QuickConvert = ({ updateIngredient }) => {
         }
       }
 
-      return originalArray.join("\n");
+      // return originalArray.join("\n");
+      return converted;
     }
   }
 
@@ -181,15 +182,19 @@ const QuickConvert = ({ updateIngredient }) => {
       <form onSubmit={handleSubmit}>
         <label>
           Enter your ingredient below <i>(ex: 1 cup sugar)</i>
-          <input
-            type="type"
-            name="input"
-            className="input"
-            value={recipe}
-            onChange={handleChange}
-          />
+          <div>
+            <input
+              type="type"
+              name="input"
+              className={styles.input}
+              value={recipe}
+              onChange={handleChange}
+            />
+          </div>
         </label>
-        <button type="submit">convert</button>
+        <button className={styles.convertButton} type="submit">
+          convert
+        </button>
       </form>
     </div>
   );

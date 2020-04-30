@@ -5,7 +5,13 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <footer className={styles.footer}>
-        <p>FOOTER stuff</p>
+        <p>
+          <a href="https://github.com/sophi-li/conversion-calc">
+            {" "}
+            Source Code |
+          </a>{" "}
+          <a href="https://twitter.com/sophia_wyl"> Contact </a>{" "}
+        </p>
       </footer>
     </div>
   );

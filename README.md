@@ -10,11 +10,33 @@
 
 ## Install
 
+1. Clone repository to your local machine
+
+```sh
+npm install https://github.com/sophi-li/conversion-calc.git
+```
+
+2. Navigate into the repository
+
+```sh
+cd conversion-calc
+```
+
+3. Install node modules
+
 ```sh
 npm install
 ```
 
+4. Install packages
+
+```sh
+npm install numeric-quantity
+```
+
 ## Devlopment
+
+Run live server using [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/):
 
 ```sh
 npm run start
