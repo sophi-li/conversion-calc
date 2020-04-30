@@ -10,11 +10,27 @@ const RecipeResizer = () => {
   };
 
   return (
-    <div className={styles.recipeResizerContainer}>
-      <ResizerForumla updateSize={updateSize} />
-      <div>
-        <p>Your output</p>
-        <textarea value={resize} rows="20" cols="50"></textarea>
+    <div>
+      <h2>Recipe Resizer</h2>
+      <h3>Instructions:</h3>
+      <p>1. Enter your recipe with line breaks.</p>
+      <p>2. Enter a number for how much you need to scale your recipe by.</p>
+      <p>
+        3. Click multiply to increase your recipe or divide to decrease your
+        recipe size.
+      </p>
+
+      <div className={styles.recipeResizerContainer}>
+        <ResizerForumla updateSize={updateSize} />
+        <div>
+          <h4>Result:</h4>
+          <textarea
+            className={styles.textArea}
+            value={resize}
+            rows="20"
+            cols="45"
+          ></textarea>
+        </div>
       </div>
     </div>
   );

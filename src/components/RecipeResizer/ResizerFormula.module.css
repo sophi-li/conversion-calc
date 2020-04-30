@@ -1,3 +1,38 @@
 .resizerFormulaContatiner {
   margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.textArea {
+  border: 3px solid tomato;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.multiplierContainer {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.multiplierInput,
+.divideButton,
+.multiplyButton {
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .resizerFormulaContatiner {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .multiplierContainer {
+    /* flex-direction: column; */
+    margin-top: 5rem;
+  }
 }

@@ -84,29 +84,46 @@ const ResizerFormula = ({ updateSize }) => {
   };
 
   return (
-    <div className={styles.resizerFormulaContatiner}>
-      <form onSubmit={handleSubmitRecipe}>
-        <label>
-          <p>Enter your recipe with line breaks</p>
-        </label>
-        <textarea
-          value={recipe}
-          onChange={handleChangeRecipe}
-          type="text"
-          rows="20"
-          cols="50"
-        ></textarea>
-
+    <div>
+      <form
+        onSubmit={handleSubmitRecipe}
+        className={styles.resizerFormulaContatiner}
+      >
         <div>
+          <label>
+            <h4>Enter your recipe with line breaks:</h4>
+          </label>
+          <textarea
+            value={recipe}
+            onChange={handleChangeRecipe}
+            type="text"
+            rows="20"
+            cols="45"
+            className={styles.textArea}
+          ></textarea>
+        </div>
+
+        <div className={styles.multiplierContainer}>
           <input
             type="number"
             value={multiplier}
             onChange={handleChangeMultiplier}
+            className={styles.multiplierInput}
           />
-          <button type="submit" value="multiply" onClick={handleSubmitMultiply}>
+          <button
+            type="submit"
+            value="multiply"
+            onClick={handleSubmitMultiply}
+            className={styles.multiplyButton}
+          >
             Multiply
           </button>
-          <button type="submit" value="divide" onClick={handleSubmitDivide}>
+          <button
+            type="submit"
+            value="divide"
+            onClick={handleSubmitDivide}
+            className={styles.divideButton}
+          >
             Divide
           </button>
         </div>
