@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import numericQuantity from "numeric-quantity";
 import styles from "./ResizerFormula.module.css";
 
 const ResizerFormula = ({ updateSize }) => {
@@ -53,9 +54,9 @@ const ResizerFormula = ({ updateSize }) => {
     for (let i = 0; i < parsedItemArray.length; i++) {
       let newQty = 0;
       if (multiply) {
-        newQty = parsedItemArray[i].qty * multiplier;
+        newQty = numericQuantity(parsedItemArray[i].qty) * multiplier;
       } else {
-        newQty = parsedItemArray[i].qty / multiplier;
+        newQty = numericQuantity(parsedItemArray[i].qty) / multiplier;
       }
       originalArray[i] = originalArray[i].concat(
         ` (${newQty} ${parsedItemArray[i].scale} ${parsedItemArray[i].ingredient})`

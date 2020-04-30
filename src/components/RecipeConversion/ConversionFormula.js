@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import numericQuantity from "numeric-quantity";
+import styles from "./RecipeConversion.module.css";
 
 const ConversionFormula = ({ updateRecipe }) => {
   const [recipe, setRecipe] = useState("");
@@ -161,9 +162,9 @@ const ConversionFormula = ({ updateRecipe }) => {
           }
         }
       }
-
-      return originalArray.join("\n");
+      // console.log(originalArray);
     }
+    return originalArray.join("\n");
   }
 
   const handleSubmit = (event) => {
@@ -179,14 +180,15 @@ const ConversionFormula = ({ updateRecipe }) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        <p>Enter your recipe here:</p>
+        <h4>Enter your recipe with line breaks:</h4>
       </label>
       <textarea
+        className={styles.textArea}
         value={recipe}
         onChange={handleChange}
         type="text"
         rows="20"
-        cols="50"
+        cols="45"
       >
         1 cup sugar
       </textarea>

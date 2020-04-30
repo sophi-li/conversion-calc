@@ -8,14 +8,26 @@ const RecipeConversion = () => {
     setRec(rec);
   }
   return (
-    <div className={styles.RecipeConversionContainer}>
-      <ConversionFormula updateRecipe={updateRecipe} />
-      {/* <p>Your recipe with line breaks</p> */}
-      <div>
-        <label>
-          <p>Your output here:</p>
-        </label>
-        <textarea value={rec} rows="20" cols="50"></textarea>
+    <div>
+      <h2>Recipe Conversion</h2>
+      <h3>Instructions:</h3>
+      <p>1. Enter your recipe with line breaks.</p>
+      <p>2. Click the convert button.</p>
+
+      <div className={styles.RecipeConversionContainer}>
+        <ConversionFormula updateRecipe={updateRecipe} />
+        {/* <p>Your recipe with line breaks</p> */}
+        <div>
+          <label>
+            <h4>Result</h4>
+          </label>
+          <textarea
+            className={styles.textArea}
+            value={rec}
+            rows="20"
+            cols="45"
+          ></textarea>
+        </div>
       </div>
     </div>
   );
