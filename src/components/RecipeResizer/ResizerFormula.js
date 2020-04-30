@@ -52,15 +52,17 @@ const ResizerFormula = ({ updateSize }) => {
     }
 
     for (let i = 0; i < parsedItemArray.length; i++) {
-      let newQty = 0;
-      if (multiply) {
-        newQty = numericQuantity(parsedItemArray[i].qty) * multiplier;
-      } else {
-        newQty = numericQuantity(parsedItemArray[i].qty) / multiplier;
+      if (parsedItemArray[i].qty !== null) {
+        let newQty = 0;
+        if (multiply) {
+          newQty = numericQuantity(parsedItemArray[i].qty) * multiplier;
+        } else {
+          newQty = numericQuantity(parsedItemArray[i].qty) / multiplier;
+        }
+        originalArray[i] = originalArray[i].concat(
+          ` (${newQty} ${parsedItemArray[i].scale} ${parsedItemArray[i].ingredient})`
+        );
       }
-      originalArray[i] = originalArray[i].concat(
-        ` (${newQty} ${parsedItemArray[i].scale} ${parsedItemArray[i].ingredient})`
-      );
     }
 
     return originalArray.join("\n");
