@@ -14,7 +14,7 @@ const CelsiusToF = ({ updateCelsius }) => {
     setCelsiusToF("");
   }
   return (
-    <div>
+    <div className={styles.CelsiusToFContainer}>
       <form onSubmit={handleSubmitCelsiusToF}>
         <label>
           <h3>Convert Celcius to Farenheit: </h3>

@@ -10,11 +10,11 @@ const FarenheitToC = ({ udpdateFarenheit }) => {
 
   function handleSubmitFarenheitToC(event) {
     event.preventDefault();
-    udpdateFarenheit(Math.round((farenheitToC - 32) * (5 / 9)));
+    udpdateFarenheit(`${Math.round((farenheitToC - 32) * (5 / 9))} °C`);
     setFarenheitToC("");
   }
   return (
-    <div>
+    <div className={styles.FarenheitToCContainer}>
       <form onSubmit={handleSubmitFarenheitToC}>
         <label>
           <h3>Convert Farenheit to Celcius: </h3>
