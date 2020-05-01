@@ -3,10 +3,8 @@ import ConversionFormula from "./ConversionFormula";
 import styles from "./RecipeConversion.module.css";
 
 const RecipeConversion = () => {
-  const [rec, setRec] = useState("");
-  function updateRecipe(rec) {
-    setRec(rec);
-  }
+  const [convertedRecipe, setConvertedRecipe] = useState("");
+
   return (
     <div>
       <h2>Recipe Conversion</h2>
@@ -15,17 +13,17 @@ const RecipeConversion = () => {
       <p>2. Click the convert button.</p>
 
       <div className={styles.RecipeConversionContainer}>
-        <ConversionFormula updateRecipe={updateRecipe} />
-        {/* <p>Your recipe with line breaks</p> */}
+        <ConversionFormula updateRecipe={setConvertedRecipe} />
         <div>
           <label>
             <h4>Result</h4>
           </label>
           <textarea
             className={styles.textArea}
-            value={rec}
+            value={convertedRecipe}
             rows="20"
             cols="45"
+            readOnly={true}
           ></textarea>
         </div>
       </div>

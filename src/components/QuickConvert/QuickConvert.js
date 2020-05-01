@@ -1,95 +1,30 @@
 import React, { useState } from "react";
 import numericQuantity from "numeric-quantity";
 import styles from "./QuickConvert.module.css";
+import { CUP_IN_GRAMS, UNITS } from "../../constants";
+import { parseLine } from "../../utils";
+
 const QuickConvert = ({ updateIngredient }) => {
   const [recipe, setRecipe] = useState("");
-
-  const ingredientsCupsToGrams = {
-    water: ["water", 236],
-    butter: ["butter", 226],
-    unsaltedButter: ["unsalted butter", 226],
-    saltedButter: ["salted butter", 226],
-    margarine: ["margarine", 230],
-    flour: ["flour", 120],
-    APflour: ["all purpose flour", 120],
-    cakeFlour: ["cake flour", 114],
-    cocoaPowder: ["cocoa powder", 100],
-    salt: ["salt", 292],
-    brownSugar: ["brown sugar", 195],
-    sugar: ["sugar", 200],
-    granulatedSugar: ["granulated sugar", 200],
-    granulatedWhiteSugar: ["granulated white sugar", 200],
-    whiteSugar: ["white sugar", 200],
-    powderedSugar: ["powdered sugar", 120],
-    honey: ["honey", 336],
-    molasses: ["molasses", 336],
-    syrup: ["syrup", 336],
-    buttermilk: ["buttermilk", 245],
-    milk: ["milk", 245],
-    oats: ["oats", 102],
-    bakingSoda: ["baking soda", 220],
-    bakingPowder: ["baking powder", 220],
-    oil: ["oil", 218],
-    vegetableOil: ["vegetable oil", 218],
-    vanillaExtract: ["vanilla extract", 208],
-    activeDryYeast: ["active dry yeast", 224],
-  };
-
   let multiplier = 0;
   let converted = "";
-  const tablespoon = ["tablespoon", "tablespoons", "tbs", "tbs."];
-  const teaspoon = ["teaspoon", "teaspoons", "tsp", "tsp."];
-  const cup = ["cup", "cups", "c."];
-  const gram = ["gram", "grams", "g."];
-
+  const { tablespoon, teaspoon, cup, gram } = UNITS;
   function convert() {
     let originalArray = recipe.split("\n").filter(function (el) {
       return el !== "";
     });
     let parsedItemArray = [];
-
-    const parseLine = (text) => {
-      const scaleWordsRegex = /(tablespoon|teaspoon|gram|cup|tsp|tbs|medium)[\w]*\s/i;
-      const result = {
-        qty: null,
-        scale: null,
-        ingredient: null,
-        original: text,
-      };
-
-      const containsScaleWord = text.match(scaleWordsRegex);
-      if (containsScaleWord) {
-        result.scale = containsScaleWord[1]; // Captures the exact scale word
-        const scaleWordPos = containsScaleWord.index;
-        result.qty = text.slice(0, scaleWordPos).trim();
-        result.ingredient = text.slice(
-          scaleWordPos + containsScaleWord[0].length
-        );
-
-        const operatorWords = /(of)/i;
-        result.ingredient = result.ingredient.replace(operatorWords, "").trim();
-      }
-
-      return result;
-    };
-
     for (let i = 0; i < originalArray.length; i++) {
       parsedItemArray.push(parseLine(originalArray[i]));
     }
-
     for (let i = 0; i < parsedItemArray.length; i++) {
       //   get multiplier of ingredient for conversion formula
-      for (
-        let ing = 0;
-        ing < Object.keys(ingredientsCupsToGrams).length;
-        ing++
-      ) {
+      for (let ing = 0; ing < Object.keys().length; ing++) {
         let values = Object.values(ingredientsCupsToGrams);
         if (parsedItemArray[i].ingredient.includes(values[ing][0])) {
           multiplier = values[ing][1];
         }
       }
-
       // conversion formula
       if (multiplier) {
         // cups to grams
@@ -102,7 +37,6 @@ const QuickConvert = ({ updateIngredient }) => {
             multiplier = 0;
           }
         }
-
         // tablespoons to grams
         for (let j = 0; j < tablespoon.length; j++) {
           if (parsedItemArray[i].scale === tablespoon[j]) {
@@ -113,7 +47,6 @@ const QuickConvert = ({ updateIngredient }) => {
             // multiplier = 0;
           }
         }
-
         // teaspoon to grams
         for (let j = 0; j < teaspoon.length; j++) {
           if (parsedItemArray[i].scale === teaspoon[j]) {
@@ -126,7 +59,6 @@ const QuickConvert = ({ updateIngredient }) => {
             multiplier = 0;
           }
         }
-
         // grams to CUPS
         for (let j = 0; j < gram.length; j++) {
           if (parsedItemArray[i].scale === gram[j]) {
@@ -151,22 +83,18 @@ const QuickConvert = ({ updateIngredient }) => {
           }
         }
       }
-
       // return originalArray.join("\n");
       return converted;
     }
   }
-
   const handleSubmit = (event) => {
     event.preventDefault();
     updateIngredient(convert(recipe));
     setRecipe("");
   };
-
   const handleChange = (event) => {
     setRecipe(event.target.value);
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>

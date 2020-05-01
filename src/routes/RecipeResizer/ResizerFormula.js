@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import numericQuantity from "numeric-quantity";
 import styles from "./ResizerFormula.module.css";
+import { parseLine } from "../../utils";
 
 const ResizerFormula = ({ updateSize }) => {
   const [recipe, setRecipe] = useState("");
@@ -21,31 +22,6 @@ const ResizerFormula = ({ updateSize }) => {
       return el !== "";
     });
     let parsedItemArray = [];
-
-    const parseLine = (text) => {
-      const scaleWordsRegex = /(tablespoon|teaspoon|gram|cup|tsp|tbs|medium)[\w]*\s/i;
-      const result = {
-        qty: null,
-        scale: null,
-        ingredient: null,
-        original: text,
-      };
-
-      const containsScaleWord = text.match(scaleWordsRegex);
-      if (containsScaleWord) {
-        result.scale = containsScaleWord[1]; // Captures the exact scale word
-        const scaleWordPos = containsScaleWord.index;
-        result.qty = text.slice(0, scaleWordPos).trim();
-        result.ingredient = text.slice(
-          scaleWordPos + containsScaleWord[0].length
-        );
-
-        const operatorWords = /(of)/i;
-        result.ingredient = result.ingredient.replace(operatorWords, "").trim();
-      }
-
-      return result;
-    };
 
     for (let i = 0; i < originalArray.length; i++) {
       parsedItemArray.push(parseLine(originalArray[i]));

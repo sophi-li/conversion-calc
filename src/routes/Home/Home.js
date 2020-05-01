@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Home.module.css";
-import QuickConvert from "../QuickConvert/QuickConvert";
+import QuickConvert from "../../components/QuickConvert/QuickConvert";
 
 const Home = () => {
   const [ingredient, setIngredient] = useState("");
-
-  const convertIngredient = (ing) => {
-    setIngredient(ing);
-  };
 
   return (
     <section className={styles.homeContainer}>
@@ -27,7 +23,7 @@ const Home = () => {
 
       <div className={styles.quickConvert}>
         <h2>Quick Convert</h2>
-        <QuickConvert updateIngredient={convertIngredient} />
+        <QuickConvert updateIngredient={setIngredient} />
         <span>
           <p>Result: {ingredient}</p>
         </span>
