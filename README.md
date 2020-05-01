@@ -13,7 +13,7 @@
 1. Clone repository to your local machine
 
 ```sh
-npm install https://github.com/sophi-li/conversion-calc.git
+git clone https://github.com/sophi-li/conversion-calc.git
 ```
 
 2. Navigate into the repository
