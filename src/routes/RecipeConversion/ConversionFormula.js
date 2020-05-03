@@ -10,14 +10,6 @@ const ConversionFormula = ({ updateRecipe }) => {
   const [recipe, setRecipe] = useState("1 cup sugar");
 
   const parseRecipe = (recipe) => {
-    // console.log(
-    //   recipe
-    //     .split("\n")
-    //     .filter((el) => {
-    //       return el !== "";
-    //     })
-    //     .map((item) => parseLine(item))
-    // );
     return recipe
       .split("\n")
       .filter((el) => {
@@ -44,7 +36,6 @@ const ConversionFormula = ({ updateRecipe }) => {
         // case units.cup:
         case "cup":
           conversion = Math.round(numericQuantity(qty) * multiplier);
-          console.log(currentUnit.name);
           break;
 
         case "tablespoon":
@@ -79,27 +70,34 @@ const ConversionFormula = ({ updateRecipe }) => {
       return false;
     });
 
-    console.log(currentUnit);
+    if (currentUnit.length > 0) {
+      if (qty < 20) {
+        conversion = `${((qty / multiplier) * 48).toFixed(2)} teaspoons`;
+      } else if (qty < 50) {
+        conversion = `${((qty / multiplier) * 16).toFixed(2)} tablespoons`;
+      } else {
+        conversion = `${(qty / multiplier).toFixed(2)} cups`;
+      }
 
-    if (qty < 20) {
-      conversion = `${((qty / multiplier) * 48).toFixed(2)} teaspoons`;
-    } else if (qty < 50) {
-      conversion = `${((qty / multiplier) * 16).toFixed(2)} tablespoons`;
-    } else {
-      conversion = `${(qty / multiplier).toFixed(2)} cups`;
+      return conversion;
     }
-
-    return conversion;
+    return null;
   };
 
   const renderConvertedRecipe = (parsedRecipe) => {
     return parsedRecipe
       .map((item) => {
-        const { qty, scale, ingredient } = item;
+        const { qty, scale, ingredient, original } = item;
 
-        let text = `${qty} ${scale} ${ingredient}`;
-
-        if (item.scale === "gram" || "grams" || "g" || "gm" || "g.") {
+        let text = `${original}`;
+        // console.log("item.scale", item.scale);
+        if (
+          item.scale === "gram" ||
+          item.scale === "grams" ||
+          item.scale === "g" ||
+          item.scale === "gm" ||
+          item.scale === "g."
+        ) {
           return `${text} (${convertFromGrams(item)})`;
         }
 

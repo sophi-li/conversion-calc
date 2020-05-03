@@ -18,6 +18,7 @@ export const parseLine = (text) => {
       qty: parseInt(text.slice(0, index).trim()),
       ingredient,
       multiplier: CUP_IN_GRAMS[ingredient],
+      original: text,
     };
   } else {
     return text;
