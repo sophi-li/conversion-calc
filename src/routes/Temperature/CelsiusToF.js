@@ -4,7 +4,7 @@ import styles from "./CelsiusToF.module.css";
 const CelsiusToF = ({ updateCelsius }) => {
   const [celsiusToF, setCelsiusToF] = useState("");
 
-  function handleChangeCelsiusToF(event, ing) {
+  function handleChangeCelsiusToF(event) {
     setCelsiusToF(event.target.value);
   }
 

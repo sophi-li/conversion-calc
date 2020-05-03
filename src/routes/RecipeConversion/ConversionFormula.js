@@ -10,6 +10,14 @@ const ConversionFormula = ({ updateRecipe }) => {
   const [recipe, setRecipe] = useState("1 cup sugar");
 
   const parseRecipe = (recipe) => {
+    // console.log(
+    //   recipe
+    //     .split("\n")
+    //     .filter((el) => {
+    //       return el !== "";
+    //     })
+    //     .map((item) => parseLine(item))
+    // );
     return recipe
       .split("\n")
       .filter((el) => {
@@ -29,23 +37,26 @@ const ConversionFormula = ({ updateRecipe }) => {
 
     if (currentUnit.length > 0) {
       let { qty, multiplier } = item;
-      const units = Object.keys(UNITS);
+      // const units = Object.keys(UNITS);
       let conversion;
 
-      switch (currentUnit.name) {
-        case units.cup:
+      switch (currentUnit[0].name) {
+        // case units.cup:
+        case "cup":
           conversion = Math.round(numericQuantity(qty) * multiplier);
+          console.log(currentUnit.name);
           break;
 
-        case units.tablespoon:
+        case "tablespoon":
           conversion = Math.round((numericQuantity(qty) * multiplier) / 16);
           break;
 
-        case units.teaspoon:
-          conversion = Math.round((numericQuantity(qty) * multiplier) / 3);
+        case "teaspoon":
+          conversion = Math.round((numericQuantity(qty) * multiplier) / 48);
           break;
 
         default:
+          conversion = 0;
           break;
       }
 
@@ -55,22 +66,27 @@ const ConversionFormula = ({ updateRecipe }) => {
     return null;
   };
 
-  const convertFromGrams = (item, to) => {
+  const convertFromGrams = (item) => {
     const { qty, multiplier } = item;
-    const units = Object.keys(UNITS);
+    // const units = Object.keys(UNITS);
     let conversion;
 
-    switch (to) {
-      case units.cup:
-        conversion = `${qty / multiplier.toFixed(2)} cups`;
-        break;
+    const currentUnit = UNITS.filter((unit) => {
+      if (unit.variations.includes(item.scale)) {
+        return true;
+      }
 
-      case units.tablespoon:
-        conversion = `${((qty / multiplier) * 16).toFixed(2)} tablespoons`;
-        break;
+      return false;
+    });
 
-      default:
-        break;
+    console.log(currentUnit);
+
+    if (qty < 20) {
+      conversion = `${((qty / multiplier) * 48).toFixed(2)} teaspoons`;
+    } else if (qty < 50) {
+      conversion = `${((qty / multiplier) * 16).toFixed(2)} tablespoons`;
+    } else {
+      conversion = `${(qty / multiplier).toFixed(2)} cups`;
     }
 
     return conversion;
@@ -83,11 +99,11 @@ const ConversionFormula = ({ updateRecipe }) => {
 
         let text = `${qty} ${scale} ${ingredient}`;
 
-        if (item.scale !== "gram") {
-          return `${text} (${convertToGrams(item)})`;
+        if (item.scale === "gram" || "grams" || "g" || "gm" || "g.") {
+          return `${text} (${convertFromGrams(item)})`;
         }
 
-        return `${text} (${convertFromGrams(item)})`;
+        return `${text} (${convertToGrams(item)})`;
       })
       .join("\n");
   };

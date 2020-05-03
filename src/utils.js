@@ -2,7 +2,7 @@ import { CUP_IN_GRAMS } from "./constants";
 
 export const parseLine = (text) => {
   const operatorWords = /(of)/i;
-  const scaleWordsRegex = /(tablespoon|teaspoon|gram|cup|tsp|tbs|medium)[\w]*\s/i;
+  const scaleWordsRegex = /(tablespoon|tablespoons|tbs|tbs.|teaspoon|teaspoons|tsp.|tsp|gram|grams|g|g.|gm|cup|cups|c|c.|tsp|medium)[\w]*\s/i;
   const containsScaleWord = text.match(scaleWordsRegex);
 
   if (containsScaleWord) {
@@ -19,5 +19,7 @@ export const parseLine = (text) => {
       ingredient,
       multiplier: CUP_IN_GRAMS[ingredient],
     };
+  } else {
+    return text;
   }
 };

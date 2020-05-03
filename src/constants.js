@@ -35,6 +35,6 @@ export const UNITS = [
     variations: ["tablespoon", "tablespoons", "tbs", "tbs."],
   },
   { name: "teaspoon", variations: ["teaspoon", "teaspoons", "tsp", "tsp."] },
-  { name: "cup", variations: ["cup", "cups", "c."] },
-  { name: "gram", variations: ["gram", "grams", "g."] },
+  { name: "cup", variations: ["cup", "cups", "c.", "c"] },
+  { name: "gram", variations: ["gram", "grams", "g.", "g", "gm"] },
 ];

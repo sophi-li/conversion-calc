@@ -7,6 +7,7 @@ import styles from "./index.module.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
+import WebConversion from "./routes/WebConversion";
 import RecipeConversion from "./routes/RecipeConversion";
 import RecipeResizer from "./routes/RecipeResizer";
 import Temperature from "./routes/Temperature";
@@ -19,6 +20,9 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
+          <Route path="/WebConversion">
+            <WebConversion />
+          </Route>
           <Route path="/RecipeConversion">
             <RecipeConversion />
           </Route>

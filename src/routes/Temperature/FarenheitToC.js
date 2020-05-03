@@ -4,7 +4,7 @@ import styles from "./FarenheitToC.module.css";
 const FarenheitToC = ({ udpdateFarenheit }) => {
   const [farenheitToC, setFarenheitToC] = useState("");
 
-  function handleChangeFarenheitToC(event, ing) {
+  function handleChangeFarenheitToC(event) {
     setFarenheitToC(event.target.value);
   }
 
