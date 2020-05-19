@@ -1,4 +1,4 @@
-<h1 align="center">React Practice: Baking Conversion</h1>
+<h1 align="center">Baking Conversion</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/sophia_wyl">
@@ -22,24 +22,21 @@ git clone https://github.com/sophi-li/conversion-calc.git
 cd conversion-calc
 ```
 
-3. Install node modules
+3. Navigate into client folder, install modules, & run live server
 
-```sh
+```
+cd client
 npm install
-```
-
-4. Install packages
-
-```sh
 npm install numeric-quantity
+npm run start
 ```
 
-## Devlopment
-
-Run live server using [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/):
+4. Navigate into server folder, install modules, & run live server
 
 ```sh
-npm run start
+cd server
+npm install
+npm run serve
 ```
 
 ## Author
