@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Layout from "../../components/Layout";
 
 const WebConversion = () => {
   const [recipe, setRecipe] = useState([]);
@@ -30,21 +31,23 @@ const WebConversion = () => {
   }
 
   return (
-    <div className="App">
-      <h1>Bread Puns</h1>
-      <form onSubmit={handleSubmit}>
-        <input value={inputURL} type="text" onChange={handleChange}></input>
-        <button type="submit" placeholder="enter url">
-          Submit
-        </button>
-      </form>
-      Output:
-      <ul>
-        {recipe.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
+    <Layout>
+      <div className="App">
+        <h1>Web Conversion</h1>
+        <form onSubmit={handleSubmit}>
+          <input value={inputURL} type="text" onChange={handleChange}></input>
+          <button type="submit" placeholder="enter url">
+            Submit
+          </button>
+        </form>
+        Output:
+        <ul>
+          {recipe.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </Layout>
   );
 };
 

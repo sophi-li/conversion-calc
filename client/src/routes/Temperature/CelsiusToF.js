@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./CelsiusToF.module.css";
+import styles from "./Temperature.module.css";
 
 const CelsiusToF = ({ updateCelsius }) => {
   const [celsiusToF, setCelsiusToF] = useState("");
@@ -14,7 +14,7 @@ const CelsiusToF = ({ updateCelsius }) => {
     setCelsiusToF("");
   }
   return (
-    <div className={styles.CelsiusToFContainer}>
+    <div className={styles.temperatureContainer}>
       <form onSubmit={handleSubmitCelsiusToF}>
         <label>
           <h3>Convert Celcius to Farenheit: </h3>
@@ -24,6 +24,7 @@ const CelsiusToF = ({ updateCelsius }) => {
           value={celsiusToF}
           onChange={handleChangeCelsiusToF}
           className={styles.input}
+          placeholder="e.g. 177"
         />
         <button type="submit" className={styles.submitButton}>
           Convert to Farenheit

@@ -77,18 +77,22 @@ const ResizerFormula = ({ updateSize }) => {
             onChange={handleChangeRecipe}
             type="text"
             rows="20"
-            cols="45"
+            cols="40"
             className={styles.textArea}
           ></textarea>
         </div>
 
         <div className={styles.multiplierContainer}>
-          <input
-            type="number"
-            value={multiplier}
-            onChange={handleChangeMultiplier}
-            className={styles.multiplierInput}
-          />
+          <span>
+            Multiplier:
+            <input
+              type="number"
+              value={multiplier}
+              onChange={handleChangeMultiplier}
+              className={styles.multiplierInput}
+              placeholder="e.g. 2"
+            />
+          </span>
           <button
             type="submit"
             value="multiply"

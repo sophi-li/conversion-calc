@@ -1,0 +1,9 @@
+.faqContainer {
+  line-height: 1.3rem;
+  letter-spacing: 0.3px;
+}
+
+.question {
+  margin-top: 2rem;
+  font-weight: bold;
+}

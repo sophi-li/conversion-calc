@@ -1,0 +1,18 @@
+.temperatureContainer {
+  margin-top: 2rem;
+}
+
+.input {
+  font-size: 1rem;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border: 1px solid gray;
+  padding: 0.3rem;
+}
+
+.submitButton {
+  padding: 0.4rem 1rem;
+  background-color: none;
+  border-color: #62a5a1;
+  font-size: 1rem;
+}

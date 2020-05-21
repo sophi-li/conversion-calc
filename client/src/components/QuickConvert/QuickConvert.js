@@ -188,7 +188,7 @@ const QuickConvert = ({ updateIngredient }) => {
           </div>
         </label>
         <button className={styles.convertButton} type="submit">
-          convert
+          Convert
         </button>
       </form>
     </div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import numericQuantity from "numeric-quantity";
-
 import styles from "./RecipeConversion.module.css";
 
 import { UNITS } from "../../constants";
@@ -116,7 +115,7 @@ const ConversionFormula = ({ updateRecipe }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form classNam={styles.conversionFormulaContainer} onSubmit={handleSubmit}>
       <label>
         <h4>Enter your recipe with line breaks:</h4>
       </label>
@@ -126,9 +125,13 @@ const ConversionFormula = ({ updateRecipe }) => {
         onChange={handleChange}
         type="text"
         rows="20"
-        cols="45"
+        cols="40"
       />
-      <button type="submit">Convert</button>
+      {/* <div> */}
+      <button className={styles.submitButton} type="submit">
+        Convert
+      </button>
+      {/* </div> */}
     </form>
   );
 };

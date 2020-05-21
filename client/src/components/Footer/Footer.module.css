@@ -1,8 +1,21 @@
-.footer {
-  flex-shrink: 0;
-  text-align: right;
-  color: white;
-  margin-top: 3rem;
+.footerContainer {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 0.6rem 0rem 0.1rem 0rem;
+  font-size: 1rem;
+  background-color: #62a5a1;
+  letter-spacing: 0.3px;
+}
+
+.footerContent {
+  color: whitesmoke;
+  text-decoration: none;
+  margin: 0.5rem;
   font-size: 0.9rem;
-  border-top: 1px solid gray;
+}
+
+.footerContent:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #222;
 }

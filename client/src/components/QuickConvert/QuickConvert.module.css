@@ -6,15 +6,17 @@
   margin: 1rem 0rem;
   width: 80%;
   font-size: 1rem;
-  border-radius: 5px;
   border: 1px solid gray;
   border-style: solid;
+  padding: 0.2rem;
 }
 
 .convertButton {
-  border-radius: 5px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  /* border: 1px solid #ffa899; */
-  border: 1px solid tomato;
+  border: 2px solid #62a5a1;
+}
+
+.convertButton:hover {
+  cursor: pointer;
 }
