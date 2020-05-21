@@ -115,7 +115,7 @@ const ConversionFormula = ({ updateRecipe }) => {
   };
 
   return (
-    <form classNam={styles.conversionFormulaContainer} onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <label>
         <h4>Enter your recipe with line breaks:</h4>
       </label>

@@ -3,10 +3,10 @@
   flex-direction: column;
 }
 
-.conversionFormulaContainer {
+/* .conversionFormulaContainer {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .textArea {
   border: 2px solid gray;
@@ -24,8 +24,8 @@
   .RecipeConversionContainer {
     flex-direction: row;
   }
-  .conversionFormulaContainer {
+  /* .conversionFormulaContainer {
     display: flex;
     flex-direction: row;
-  }
+  } */
 }
