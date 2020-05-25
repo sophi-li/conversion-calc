@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout";
 
+import styles from "./WebConversion.module.css";
+
 const WebConversion = () => {
   const [recipe, setRecipe] = useState([]);
   const [inputURL, setInputURL] = useState("");
@@ -34,9 +36,23 @@ const WebConversion = () => {
     <Layout>
       <div className="App">
         <h1>Web Conversion</h1>
-        <form onSubmit={handleSubmit}>
-          <input value={inputURL} type="text" onChange={handleChange}></input>
-          <button type="submit" placeholder="enter url">
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Copy and paste a url to a website with a recipe.</li>
+          <li>Press the submit button.</li>
+        </ol>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <input
+            value={inputURL}
+            type="text"
+            onChange={handleChange}
+            className={styles.input}
+          ></input>
+          <button
+            type="submit"
+            placeholder="enter url"
+            className={styles.submitButton}
+          >
             Submit
           </button>
         </form>

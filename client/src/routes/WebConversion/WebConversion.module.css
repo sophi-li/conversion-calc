@@ -1,0 +1,24 @@
+.input {
+  font-size: 1rem;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border: 2px solid gray;
+  padding: 0.3rem;
+  width: 40%;
+}
+
+.submitButton {
+  padding: 0.4rem 1rem;
+  background-color: none;
+  font-size: 1rem;
+  border: 2px solid #62a5a1;
+  border-style: solid;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+}
+
+.form {
+  margin-bottom: 1rem;
+}

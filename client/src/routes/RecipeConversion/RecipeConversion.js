@@ -12,9 +12,10 @@ const RecipeConversion = () => {
       <div>
         <h2>Recipe Conversion</h2>
         <h3>Instructions:</h3>
-        <p>1. Enter your recipe with line breaks.</p>
-        <p>2. Click the convert button.</p>
-
+        <ol>
+          <li>Enter your recipe with line breaks.</li>
+          <li>Click the convert button.</li>
+        </ol>
         <div className={styles.RecipeConversionContainer}>
           <ConversionFormula updateRecipe={setConvertedRecipe} />
           <div>

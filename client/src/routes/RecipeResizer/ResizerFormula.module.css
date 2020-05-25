@@ -33,6 +33,11 @@
   font-size: 1rem;
 }
 
+.divideButton:hover,
+.multiplyButton:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 900px) {
   .resizerFormulaContatiner {
     flex-direction: row;

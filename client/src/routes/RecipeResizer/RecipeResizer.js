@@ -15,12 +15,17 @@ const RecipeResizer = () => {
       <div>
         <h2>Recipe Resizer</h2>
         <h3>Instructions:</h3>
-        <p>1. Enter your recipe with line breaks.</p>
-        <p>2. Enter a number for how much you need to scale your recipe by.</p>
-        <p>
-          3. Click multiply to increase your recipe or divide to decrease your
-          recipe size.
-        </p>
+        <ol>
+          <li>Enter your recipe with line breaks.</li>
+          <li>
+            Enter a number in the multiplier input for how much you need to
+            scale your recipe by.
+          </li>
+          <li>
+            Click multiply to increase your recipe or divide to decrease your
+            recipe size.
+          </li>
+        </ol>
 
         <div className={styles.recipeResizerContainer}>
           <ResizerForumla updateSize={updateSize} />
