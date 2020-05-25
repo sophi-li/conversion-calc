@@ -3,11 +3,6 @@
   flex-direction: column;
 }
 
-/* .conversionFormulaContainer {
-  display: flex;
-  flex-direction: column;
-} */
-
 .textArea {
   border: 2px solid gray;
   font-size: 1rem;
@@ -24,8 +19,4 @@
   .RecipeConversionContainer {
     flex-direction: row;
   }
-  /* .conversionFormulaContainer {
-    display: flex;
-    flex-direction: row;
-  } */
 }

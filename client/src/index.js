@@ -19,7 +19,7 @@ const App = () => {
     <div className={styles.container}>
       <Router>
         <Header />
-        <Switch>
+        <Switch className={styles.content}>
           <Route path="/WebConversion">
             <WebConversion />
           </Route>
