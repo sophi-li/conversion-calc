@@ -39,7 +39,7 @@ const WebConversion = () => {
         <h3>Instructions:</h3>
         <ol>
           <li>Copy and paste a url to a website with a recipe.</li>
-          <li>Press the submit button.</li>
+          <li>Click the submit button.</li>
         </ol>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
