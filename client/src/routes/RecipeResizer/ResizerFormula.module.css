@@ -20,7 +20,7 @@
 .multiplierInput {
   padding: 0.2rem 0.5rem;
   font-size: 1rem;
-  border: 1px solid gray;
+  border: 2px solid gray;
   margin-left: 0.4rem;
   width: 60%;
 }
@@ -42,10 +42,16 @@
   .resizerFormulaContatiner {
     flex-direction: row;
   }
+  .multiplierInput {
+    margin-left: 0;
+  }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
   .multiplierContainer {
     margin-top: 5rem;
+  }
+  .multiplierInput {
+    margin-left: 0.4rem;
   }
 }

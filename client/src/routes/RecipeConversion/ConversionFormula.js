@@ -127,11 +127,10 @@ const ConversionFormula = ({ updateRecipe }) => {
         rows="20"
         cols="40"
       />
-      {/* <div> */}
+
       <button className={styles.submitButton} type="submit">
         Convert
       </button>
-      {/* </div> */}
     </form>
   );
 };
