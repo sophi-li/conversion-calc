@@ -20,7 +20,7 @@ const RecipeConversion = () => {
           <ConversionFormula updateRecipe={setConvertedRecipe} />
           <div>
             <label>
-              <h4>Result</h4>
+              <h4>Result:</h4>
             </label>
             <textarea
               className={styles.textArea}

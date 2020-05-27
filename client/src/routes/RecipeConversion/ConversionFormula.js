@@ -6,7 +6,7 @@ import { UNITS } from "../../constants";
 import { parseLine } from "../../utils";
 
 const ConversionFormula = ({ updateRecipe }) => {
-  const [recipe, setRecipe] = useState("1 cup sugar");
+  const [recipe, setRecipe] = useState(`1 cup sugar \n1 cup flour`);
 
   const parseRecipe = (recipe) => {
     return recipe

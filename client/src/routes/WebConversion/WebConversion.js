@@ -40,6 +40,10 @@ const WebConversion = () => {
         <ol>
           <li>Copy and paste a url to a website with a recipe.</li>
           <li>Click the submit button.</li>
+          <li>
+            Wait for about 10-30 seconds and your recipe and its conversion will
+            apear under the results.
+          </li>
         </ol>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
@@ -56,7 +60,7 @@ const WebConversion = () => {
             Submit
           </button>
         </form>
-        Output:
+        Result:
         <ul>
           {recipe.map((item, index) => (
             <li key={index}>{item}</li>

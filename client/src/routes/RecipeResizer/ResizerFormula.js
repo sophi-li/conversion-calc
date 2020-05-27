@@ -4,7 +4,7 @@ import styles from "./ResizerFormula.module.css";
 import { parseLine } from "../../utils";
 
 const ResizerFormula = ({ updateSize }) => {
-  const [recipe, setRecipe] = useState("");
+  const [recipe, setRecipe] = useState(`1 cup sugar \n1 cup flour`);
   const [multiplier, setMultiplier] = useState("");
   const [multiply, setMultiply] = useState(false);
   const [divide, setDivide] = useState(false);

@@ -39,7 +39,7 @@ const App = () => {
             <Home />
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );
