@@ -1,4 +1,4 @@
-<h1 align="center">Baking Conversion</h1>
+<h1 align="center">Baking Conversion Calculator</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/sophia_wyl">
@@ -6,7 +6,13 @@
   </a>
 </p>
 
-> Baking Conversion
+> Baking Conversion Calculator
+
+## Features
+
+- Recipe Conversion - convert from grams to cups or cups to grams
+- Recipe Resizer - scale up or scale down recipe
+- Temperature Converter - conver from Fahrenheit to Celcius or Celcius to Fahrenheit
 
 ## Install
 
@@ -22,21 +28,12 @@ git clone https://github.com/sophi-li/conversion-calc.git
 cd conversion-calc
 ```
 
-3. Navigate into client folder, install modules, & run live server
+3. Install modules, & run live server
 
 ```
-cd client
 npm install
 npm install numeric-quantity
 npm run start
-```
-
-4. Navigate into server folder, install modules, & run live server
-
-```sh
-cd server
-npm install
-npm run serve
 ```
 
 ## Author
