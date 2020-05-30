@@ -12,7 +12,7 @@
 
 - Recipe Conversion - convert from grams to cups or cups to grams
 - Recipe Resizer - scale up or scale down recipe
-- Temperature Converter - conver from Fahrenheit to Celcius or Celcius to Fahrenheit
+- Temperature Converter - convert from Fahrenheit to Celcius or Celcius to Fahrenheit
 
 ## Install
 
