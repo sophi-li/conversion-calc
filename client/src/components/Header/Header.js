@@ -14,11 +14,6 @@ const Header = () => {
       <div className={styles.navLinksContainer}>
         <ul className={styles.navLinks}>
           <li>
-            <Link className={styles.link} to={"/WebConversion"}>
-              Web Recipe Conversion
-            </Link>
-          </li>
-          <li>
             <Link className={styles.link} to={"/RecipeConversion"}>
               Recipe Conversion
             </Link>
