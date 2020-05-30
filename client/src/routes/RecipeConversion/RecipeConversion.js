@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import ConversionFormula from "./ConversionFormula";
-import styles from "./RecipeConversion.module.css";
+import React, { useState } from 'react'
+import ConversionFormula from './ConversionFormula'
+import styles from './RecipeConversion.module.css'
 
-import Layout from "../../components/Layout";
+import Layout from '../../components/Layout'
 
 const RecipeConversion = () => {
-  const [convertedRecipe, setConvertedRecipe] = useState("");
+  const [convertedRecipe, setConvertedRecipe] = useState('')
 
   return (
     <Layout>
@@ -33,7 +33,7 @@ const RecipeConversion = () => {
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default RecipeConversion;
+export default RecipeConversion

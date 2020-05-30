@@ -1,17 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import styles from "./index.module.css";
+import styles from './index.module.css'
 
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
 
-import RecipeConversion from "./routes/RecipeConversion";
-import RecipeResizer from "./routes/RecipeResizer";
-import Temperature from "./routes/Temperature";
-import Faq from "./routes/Faq";
-import Home from "./routes/Home";
+import RecipeConversion from './routes/RecipeConversion'
+import RecipeResizer from './routes/RecipeResizer'
+import Temperature from './routes/Temperature'
+import Faq from './routes/Faq'
+import Home from './routes/Home'
 
 const App = () => {
   return (
@@ -38,7 +38,7 @@ const App = () => {
         {/* <Footer /> */}
       </Router>
     </div>
-  );
-};
+  )
+}
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'))
