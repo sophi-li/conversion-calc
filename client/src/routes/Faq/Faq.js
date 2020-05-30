@@ -1,7 +1,7 @@
-import React from "react";
-import Layout from "../../components/Layout";
+import React from 'react'
+import Layout from '../../components/Layout'
 
-import styles from "./Faq.module.css";
+import styles from './Faq.module.css'
 
 const Faq = () => {
   return (
@@ -45,7 +45,7 @@ const Faq = () => {
           Can you add it?
         </p>
         <p>
-          I'm working on adding more ingredients and conversions.{" "}
+          I'm working on adding more ingredients and conversions.{' '}
           <a href="https://twitter.com/sophia_wyl">Send me a tweet</a> and let
           me know what's missing!
         </p>
@@ -60,7 +60,7 @@ const Faq = () => {
               Parses your recipe to determine what ingredients need to be
               converted
             </li>
-            <li>Looks up the ingredient's conversion rate on our database</li>{" "}
+            <li>Looks up the ingredient's conversion rate on our database</li>{' '}
             <li>
               Applies a formula to the ingredient's quantity based on the
               conversion rate
@@ -69,30 +69,9 @@ const Faq = () => {
           </ol>
         </p>
 
-        <p className={styles.question}>
-          7. How does the web recipe conversion calculator work?
-        </p>
+        <p className={styles.question}>7. Where can I find the source code?</p>
         <p>
-          Here's how the recipe conversion calculator works:
-          <ol>
-            <li>
-              When you enter your url, the calculator uses a web scraping tool
-              called Playwright to get the recipe.
-            </li>
-            <li>
-              If Playwright is able to get the recipe, then the calculator
-              follows the same steps as listed in the previous question.
-            </li>
-          </ol>
-          <p>
-            <i>Note</i>: Some websites don't allow web scraping, so the web
-            conversion calculator may not always work.
-          </p>
-        </p>
-
-        <p className={styles.question}>8. Where can I find the source code?</p>
-        <p>
-          You can find the{" "}
+          You can find the{' '}
           <a href="https://github.com/sophi-li/conversion-calc">
             source code on GitHub
           </a>
@@ -100,7 +79,7 @@ const Faq = () => {
         </p>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default Faq;
+export default Faq
