@@ -95,7 +95,9 @@ const QuickConvert = ({ updateIngredient }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-          Enter an ingredient below <i>(ex: 1 cup sugar)</i>
+          <p>
+            Enter an ingredient below <i>(ex: 1 cup sugar)</i>
+          </p>
           <input
             type="type"
             name="input"

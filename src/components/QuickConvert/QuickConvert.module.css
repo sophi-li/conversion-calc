@@ -3,7 +3,8 @@
 }
 
 .input {
-  margin: 0.7rem auto;
+  margin: 0 auto;
+  margin-bottom: 0.7rem;
   width: 80%;
   font-size: 1rem;
   border: 1px solid gray;
@@ -22,4 +23,28 @@
 
 .convertButton:hover {
   cursor: pointer;
+}
+
+@media screen and (min-width: 550px) {
+  .input {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .input {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .input {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .input {
+    width: 40%;
+  }
 }
