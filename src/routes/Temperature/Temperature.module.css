@@ -1,14 +1,15 @@
-.container {
-  max-width: 90%;
-  margin: 0 auto;
+.backgroundcolorContainer {
+  background-color: #e3ebf7;
 }
 
-/* .farenheitContainer {
-  background-color: #e3ebf7;
-} */
+.title,
+.temperatureContainer {
+  max-width: 90%;
+  margin: 2rem auto;
+}
 
 .temperatureContainer {
-  margin-top: 2rem;
+  padding: 1.5rem;
 }
 
 .input {
@@ -17,7 +18,7 @@
   font-size: 1rem;
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 0.3rem;
+  padding: 0.4rem;
   margin-bottom: 0.5rem;
 }
 
@@ -31,4 +32,39 @@
 
 .submitButton:hover {
   cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+  .title,
+  .temperatureContainer {
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .title,
+  .temperatureContainer {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .title,
+  .temperatureContainer {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .title,
+  .temperatureContainer {
+    max-width: 40%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title,
+  .temperatureContainer {
+    max-width: 35%;
+  }
 }
