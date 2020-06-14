@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import styles from "./Temperature.module.css";
+import React, { useState } from 'react'
+import styles from './Temperature.module.css'
 
 const FarenheitToC = ({ udpdateFarenheit }) => {
-  const [farenheitToC, setFarenheitToC] = useState("");
+  const [farenheitToC, setFarenheitToC] = useState('')
 
   function handleChangeFarenheitToC(event) {
-    setFarenheitToC(event.target.value);
+    setFarenheitToC(event.target.value)
   }
 
   function handleSubmitFarenheitToC(event) {
-    event.preventDefault();
-    udpdateFarenheit(`${Math.round((farenheitToC - 32) * (5 / 9))} °C`);
-    setFarenheitToC("");
+    event.preventDefault()
+    udpdateFarenheit(`${Math.round((farenheitToC - 32) * (5 / 9))} °C`)
+    setFarenheitToC('')
   }
   return (
     <div className={styles.temperatureContainer}>
@@ -33,7 +33,7 @@ const FarenheitToC = ({ udpdateFarenheit }) => {
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default FarenheitToC;
+export default FarenheitToC

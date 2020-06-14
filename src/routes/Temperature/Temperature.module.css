@@ -1,3 +1,12 @@
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* .farenheitContainer {
+  background-color: #e3ebf7;
+} */
+
 .temperatureContainer {
   margin-top: 2rem;
 }
@@ -6,14 +15,17 @@
   font-size: 1rem;
   margin-right: 1rem;
   font-size: 1rem;
-  border: 2px solid gray;
+  border: 1px solid gray;
+  border-radius: 5px;
   padding: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .submitButton {
   padding: 0.4rem 1rem;
   background-color: none;
-  border: 2px solid #62a5a1;
+  border: 1px solid #2a5aa7;
+  border-radius: 5px;
   font-size: 1rem;
 }
 
