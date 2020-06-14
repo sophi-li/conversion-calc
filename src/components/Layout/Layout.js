@@ -1,10 +1,9 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React from 'react'
 
-import styles from "./Layout.module.css";
+import styles from './Layout.module.css'
 
 const Layout = ({ children }) => {
-  return <div className={styles.layoutContainer}>{children}</div>;
-};
+  return <div className={styles.layoutContainer}>{children}</div>
+}
 
-export default Layout;
+export default Layout

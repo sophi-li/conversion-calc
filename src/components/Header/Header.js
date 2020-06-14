@@ -6,16 +6,17 @@ import styles from './Header.module.css'
 const Header = () => {
   return (
     <nav className={styles.navbar}>
-      <div className={styles.titleContainer}>
-        <Link className={styles.title} to={'/'}>
-          Baking Conversion
-        </Link>
-      </div>
       <div className={styles.navLinksContainer}>
-        <ul className={styles.navLinks}>
+        <div className={styles.navLinks}>
+          <li>
+            <Link className={styles.title} to={'/'}>
+              Baking Calculator
+              {/* <img src= */}
+            </Link>
+          </li>
           <li>
             <Link className={styles.link} to={'/RecipeConversion'}>
-              Recipe Conversion
+              Recipe Calculator
             </Link>
           </li>
           <li>
@@ -28,12 +29,7 @@ const Header = () => {
               Temperature Converter
             </Link>
           </li>
-          <li>
-            <Link className={styles.link} to={'/Faq'}>
-              FAQ
-            </Link>
-          </li>
-        </ul>
+        </div>
       </div>
     </nav>
   )

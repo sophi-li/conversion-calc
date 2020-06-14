@@ -1,47 +1,38 @@
-import React, { useState } from "react";
-import ResizerForumla from "./ResizerFormula";
-import styles from "./RecipeResizer.module.css";
-import Layout from "../../components/Layout";
+import React, { useState } from 'react'
+import ResizerForumla from './ResizerFormula'
+import Layout from '../../components/Layout'
+
+import styles from './ResizerFormula.module.css'
 
 const RecipeResizer = () => {
-  const [resize, setResize] = useState("");
+  const [resize, setResize] = useState('')
 
   const updateSize = (resize) => {
-    setResize(resize);
-  };
+    setResize(resize)
+  }
 
   return (
     <Layout>
-      <div>
+      <div className={styles.container}>
         <h2>Recipe Resizer</h2>
-        <h3>Instructions:</h3>
-        <ol>
-          <li>Enter your recipe with line breaks.</li>
-          <li>
-            Enter a number in the multiplier input for how much you need to
-            scale your recipe by.
-          </li>
-          <li>
-            Click multiply to increase your recipe or divide to decrease your
-            recipe size.
-          </li>
-        </ol>
-
         <div className={styles.recipeResizerContainer}>
           <ResizerForumla updateSize={updateSize} />
           <div>
-            <h4>Result:</h4>
+            <label>
+              <p>Result:</p>
+            </label>
             <textarea
               className={styles.textArea}
               value={resize}
               rows="20"
               cols="40"
+              readOnly={true}
             ></textarea>
           </div>
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default RecipeResizer;
+export default RecipeResizer

@@ -1,3 +1,8 @@
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .resizerFormulaContatiner {
   margin-right: 1rem;
   display: flex;
@@ -5,23 +10,26 @@
 }
 
 .textArea {
-  border: 2px solid gray;
+  border: 1px solid gray;
+  border-radius: 5px;
   font-size: 1rem;
+  font-family: Roboto, sans-serif;
 }
 
 .multiplierContainer {
-  margin-top: 1rem;
-  margin-left: 1rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
+  text-align: center;
 }
 
 .multiplierInput {
   padding: 0.2rem 0.5rem;
   font-size: 1rem;
-  border: 2px solid gray;
-  margin-left: 0.4rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  /* margin-left: 0.4rem; */
   width: 60%;
 }
 
@@ -29,8 +37,10 @@
 .multiplyButton {
   margin-top: 0.7rem;
   padding: 0.2rem 0.5rem;
-  border: 2px solid #62a5a1;
+  border: 1px solid #2a5aa7;
+  border-radius: 5px;
   font-size: 1rem;
+  width: 60%;
 }
 
 .divideButton:hover,
@@ -38,20 +48,79 @@
   cursor: pointer;
 }
 
+.recipeResizerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    max-width: 70%;
+  }
+
+  .multiplierContainer {
+    /* margin-right: 15rem; */
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .multiplierContainer {
+    margin-right: 6rem;
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .multiplierContainer {
+    margin-right: 20rem;
+    width: 60%;
+  }
+}
+
 @media screen and (min-width: 900px) {
+  .recipeResizerContainer {
+    flex-direction: row;
+  }
+
+  .resizerFormulaContatiner {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .multiplierContainer {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    /* width: 90%; */
+  }
+
+  .divideButton,
+  .multiplyButton {
+    width: 100%;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+}
+
+/* @media screen and (min-width: 900px) {
   .resizerFormulaContatiner {
     flex-direction: row;
   }
   .multiplierInput {
     margin-left: 0;
   }
-}
+} */
 
-@media screen and (min-width: 1200px) {
-  .multiplierContainer {
-    margin-top: 5rem;
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 85%;
   }
-  .multiplierInput {
-    margin-left: 0.4rem;
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 70%;
   }
 }

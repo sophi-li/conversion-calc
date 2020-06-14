@@ -1,66 +1,66 @@
-import React, { useState } from "react";
-import numericQuantity from "numeric-quantity";
-import styles from "./ResizerFormula.module.css";
-import { parseLine } from "../../utils";
+import React, { useState } from 'react'
+import numericQuantity from 'numeric-quantity'
+import styles from './ResizerFormula.module.css'
+import { parseLine } from '../../utils'
 
 const ResizerFormula = ({ updateSize }) => {
-  const [recipe, setRecipe] = useState(`1 cup sugar \n1 cup flour`);
-  const [multiplier, setMultiplier] = useState("");
-  const [multiply, setMultiply] = useState(false);
-  const [divide, setDivide] = useState(false);
+  const [recipe, setRecipe] = useState(`1 cup sugar \n1 cup flour`)
+  const [multiplier, setMultiplier] = useState('')
+  const [multiply, setMultiply] = useState(false)
+  const [divide, setDivide] = useState(false)
 
   const handleSubmitMultiply = () => {
-    setMultiply(!multiply);
-  };
+    setMultiply(!multiply)
+  }
 
   const handleSubmitDivide = () => {
-    setDivide(!divide);
-  };
+    setDivide(!divide)
+  }
 
   function convert() {
-    let originalArray = recipe.split("\n").filter(function (el) {
-      return el !== "";
-    });
-    let parsedItemArray = [];
+    let originalArray = recipe.split('\n').filter(function (el) {
+      return el !== ''
+    })
+    let parsedItemArray = []
 
     for (let i = 0; i < originalArray.length; i++) {
-      parsedItemArray.push(parseLine(originalArray[i]));
+      parsedItemArray.push(parseLine(originalArray[i]))
     }
 
     for (let i = 0; i < parsedItemArray.length; i++) {
       if (parsedItemArray[i].qty !== null) {
-        let newQty = 0;
+        let newQty = 0
         if (multiply) {
-          newQty = numericQuantity(parsedItemArray[i].qty) * multiplier;
+          newQty = numericQuantity(parsedItemArray[i].qty) * multiplier
         } else {
-          newQty = numericQuantity(parsedItemArray[i].qty) / multiplier;
+          newQty = numericQuantity(parsedItemArray[i].qty) / multiplier
         }
         originalArray[i] = originalArray[i].concat(
           ` (${newQty} ${parsedItemArray[i].scale} ${parsedItemArray[i].ingredient})`
-        );
+        )
       }
     }
 
-    return originalArray.join("\n");
+    return originalArray.join('\n')
   }
 
   const convertSize = () => {
-    return convert(recipe);
-  };
+    return convert(recipe)
+  }
 
   const handleSubmitRecipe = (event) => {
-    event.preventDefault();
-    updateSize(convertSize(recipe));
-    setRecipe("");
-  };
+    event.preventDefault()
+    updateSize(convertSize(recipe))
+    setRecipe('')
+  }
 
   const handleChangeRecipe = (event) => {
-    setRecipe(event.target.value);
-  };
+    setRecipe(event.target.value)
+  }
 
   const handleChangeMultiplier = (event) => {
-    setMultiplier(event.target.value);
-  };
+    setMultiplier(event.target.value)
+  }
 
   return (
     <div>
@@ -70,7 +70,7 @@ const ResizerFormula = ({ updateSize }) => {
       >
         <div>
           <label>
-            <h4>Enter your recipe with line breaks:</h4>
+            <p>Enter your recipe with line breaks:</p>
           </label>
           <textarea
             value={recipe}
@@ -83,36 +83,48 @@ const ResizerFormula = ({ updateSize }) => {
         </div>
 
         <div className={styles.multiplierContainer}>
-          <span>
-            Multiplier:
-            <input
-              type="number"
-              value={multiplier}
-              onChange={handleChangeMultiplier}
-              className={styles.multiplierInput}
-              placeholder="e.g. 2"
-            />
-          </span>
-          <button
-            type="submit"
-            value="multiply"
-            onClick={handleSubmitMultiply}
-            className={styles.multiplyButton}
-          >
-            Multiply
-          </button>
-          <button
-            type="submit"
-            value="divide"
-            onClick={handleSubmitDivide}
-            className={styles.divideButton}
-          >
-            Divide
-          </button>
+          <div>
+            <label>
+              <p>Multiplier:</p>
+              <input
+                type="number"
+                value={multiplier}
+                onChange={handleChangeMultiplier}
+                className={styles.multiplierInput}
+                placeholder="e.g. 2"
+              />
+            </label>
+          </div>
+          <div>
+            <button
+              type="submit"
+              value="multiply"
+              onClick={handleSubmitMultiply}
+              className={styles.multiplyButton}
+            >
+              <span role="img" aria-label="multiply emoji">
+                ✖️
+              </span>{' '}
+              Multiply
+            </button>
+          </div>
+          <div>
+            <button
+              type="submit"
+              value="divide"
+              onClick={handleSubmitDivide}
+              className={styles.divideButton}
+            >
+              <span role="img" aria-label="divide emoji">
+                ➗
+              </span>{' '}
+              Divide
+            </button>
+          </div>
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default ResizerFormula;
+export default ResizerFormula

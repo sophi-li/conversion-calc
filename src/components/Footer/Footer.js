@@ -1,5 +1,7 @@
-import React from "react";
-import styles from "./Footer.module.css";
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+import styles from './Footer.module.css'
 
 const Footer = () => (
   <footer className={styles.footerContainer}>
@@ -8,15 +10,18 @@ const Footer = () => (
         className={styles.footerContent}
         href="https://github.com/sophi-li/conversion-calc"
       >
-        {" "}
+        {' '}
         Source Code
-      </a>{" "}
+      </a>{' '}
+      <Link className={styles.footerContent} to={'/Faq'}>
+        FAQ
+      </Link>
       <a className={styles.footerContent} href="https://twitter.com/sophia_wyl">
-        {" "}
-        Contact{" "}
-      </a>{" "}
+        {' '}
+        Contact{' '}
+      </a>{' '}
     </p>
   </footer>
-);
+)
 
-export default Footer;
+export default Footer

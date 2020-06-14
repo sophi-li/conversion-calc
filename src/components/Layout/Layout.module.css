@@ -1,10 +1,14 @@
 .layoutContainer {
-  max-width: 90%;
+  /* max-width: 90%; */
   margin: 0 auto;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 }
 
-@media screen and (min-width: 600px) {
+p {
+  line-height: 1.5rem;
+}
+
+/* @media screen and (min-width: 600px) {
   .layoutContainer {
     max-width: 85%;
   }
@@ -20,4 +24,4 @@
   .layoutContainer {
     max-width: 70%;
   }
-}
+} */

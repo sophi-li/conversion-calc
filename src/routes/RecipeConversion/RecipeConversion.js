@@ -9,18 +9,13 @@ const RecipeConversion = () => {
 
   return (
     <Layout>
-      <div>
-        <h2>Recipe Conversion</h2>
-        <h3>Instructions:</h3>
-        <ol>
-          <li>Enter your recipe with line breaks.</li>
-          <li>Click the convert button.</li>
-        </ol>
+      <div className={styles.container}>
+        <h2>Recipe Calculator</h2>
         <div className={styles.RecipeConversionContainer}>
           <ConversionFormula updateRecipe={setConvertedRecipe} />
           <div>
             <label>
-              <h4>Result:</h4>
+              <p>Result:</p>
             </label>
             <textarea
               className={styles.textArea}

@@ -1,21 +1,20 @@
 .navbar {
   text-align: center;
   /* border-bottom: 1px solid gray; */
+  color: #2a5aa7;
   margin-bottom: 3rem;
-  background-color: #62a5a1;
-  max-width: 100%;
-  padding: 1rem 0rem 0.5rem 0rem;
-  letter-spacing: 0.3px;
+  padding: 1rem 0rem 1rem 0rem;
+  background-color: #eeeeee;
 }
 
-.titleContainer {
-  font-size: 1.5rem;
+.navLinksContainer {
+  max-width: 100%;
 }
 
 .title {
-  color: white;
   text-decoration: none;
   font-weight: bold;
+  color: #2a5aa7;
 }
 .title:hover {
   text-decoration: underline;
@@ -24,29 +23,54 @@
 .navLinks {
   display: inline-flex;
   flex-wrap: wrap;
-  /* margin: 0 ; */
-  text-transform: uppercase;
   font-weight: bold;
   line-height: 22px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
 }
 
 .navLinks li {
   list-style-type: none;
-  padding-right: 2rem;
+  padding-right: 0.5rem;
 }
 
 .link {
-  color: whitesmoke;
   text-decoration: none;
+  color: #2a5aa7;
 }
 .link:hover {
   text-decoration: underline;
-  color: #222;
 }
 
 /* @media screen and (min-width: 600px) {
   .title {
     text-align: center;
+  }
+} */
+/* 
+@media screen and (min-width: 400px) {
+  .navLinksContainer {
+    max-width: 85%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .navLinksContainer {
+    max-width: 85%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .navLinksContainer {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navLinksContainer {
+    max-width: 70%;
+  }
+
+  .navLinks li {
+    padding-right: 2rem;
   }
 } */

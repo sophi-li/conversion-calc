@@ -86,10 +86,10 @@ const ConversionFormula = ({ updateRecipe }) => {
   const renderConvertedRecipe = (parsedRecipe) => {
     return parsedRecipe
       .map((item) => {
-        const { qty, scale, ingredient, original } = item
+        // const { qty, scale, ingredient, original } = item
+        const { original } = item
 
         let text = `${original}`
-        // console.log("item.scale", item.scale);
         if (
           item.scale === 'gram' ||
           item.scale === 'grams' ||
@@ -116,21 +116,27 @@ const ConversionFormula = ({ updateRecipe }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        <h4>Enter your recipe with line breaks:</h4>
-      </label>
-      <textarea
-        className={styles.textArea}
-        value={recipe}
-        onChange={handleChange}
-        type="text"
-        rows="20"
-        cols="40"
-      />
+      <div className={styles.inputFormContainer}>
+        <div>
+          <label>
+            <p>Enter your recipe with line breaks:</p>
+          </label>
+          <textarea
+            className={styles.textArea}
+            value={recipe}
+            onChange={handleChange}
+            type="text"
+            rows="20"
+            cols="40"
+          />
+        </div>
 
-      <button className={styles.submitButton} type="submit">
-        Convert
-      </button>
+        <div className={styles.submitBtnContainer}>
+          <button className={styles.submitButton} type="submit">
+            Convert
+          </button>
+        </div>
+      </div>
     </form>
   )
 }

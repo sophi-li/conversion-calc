@@ -3,18 +3,21 @@
 }
 
 .input {
-  margin: 1rem 0rem;
+  margin: 0.7rem auto;
   width: 80%;
   font-size: 1rem;
-  border: 2px solid gray;
+  border: 1px solid gray;
+  border-radius: 5px;
   border-style: solid;
-  padding: 0.2rem;
+  padding: 0.3rem;
 }
 
 .convertButton {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  border: 2px solid #62a5a1;
+  /* color: #2a5aa7; */
+  border: 1px solid #2a5aa7;
+  border-radius: 5px;
 }
 
 .convertButton:hover {
