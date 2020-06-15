@@ -5,30 +5,30 @@ import styles from './Header.module.css'
 
 const Header = () => {
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.navLinksContainer}>
-        <div className={styles.navLinks}>
-          <li>
-            <Link className={styles.title} to={'/'}>
-              Baking Calculator
-              {/* <img src= */}
-            </Link>
-          </li>
-          <li>
+    <nav className={styles.colorContainer}>
+      <div className={styles.container}>
+        <div className={styles.titleConatiner}>
+          <Link className={styles.title} to={'/'}>
+            Baking Calculator
+          </Link>
+        </div>
+
+        <div className={styles.navbar}>
+          <p className={styles.navItem}>
             <Link className={styles.link} to={'/RecipeConversion'}>
               Recipe Calculator
             </Link>
-          </li>
-          <li>
+          </p>
+          <p className={styles.navItem}>
             <Link className={styles.link} to={'/RecipeResizer'}>
               Recipe Resizer
             </Link>
-          </li>
-          <li>
+          </p>
+          <p className={styles.navItem}>
             <Link className={styles.link} to={'/Temperature'}>
               Temperature Converter
             </Link>
-          </li>
+          </p>
         </div>
       </div>
     </nav>

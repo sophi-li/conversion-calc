@@ -1,7 +1,8 @@
 .footerContainer {
   text-align: center;
   margin-top: 4rem;
-  padding: 0.6rem 0rem 0.1rem 0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.1rem;
   font-size: 1rem;
   background-color: #eeeeee;
   letter-spacing: 0.3px;
@@ -17,5 +18,5 @@
 .footerContent:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #222;
+  color: rgb(48, 28, 28);
 }

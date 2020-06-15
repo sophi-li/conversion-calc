@@ -1,3 +1,8 @@
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .faqContainer {
   line-height: 1.4rem;
   letter-spacing: 0.3px;
@@ -6,4 +11,28 @@
 .question {
   margin-top: 2rem;
   font-weight: bold;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    max-width: 75%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 60%;
+  }
 }

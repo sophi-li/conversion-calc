@@ -28,7 +28,6 @@ const Home = () => {
 
           <div className={styles.sectionNavContainer}>
             <section className={styles.sectionContainer}>
-              {/* <h2>Recipe Calculator</h2> */}
               <h2>Convert cups to grams or grams to cups</h2>
               <Link className={styles.linkBtn} to={'/RecipeConversion'}>
                 <span role="img" aria-label="abacus emoji">
@@ -42,7 +41,6 @@ const Home = () => {
               className={`${styles.backgroundcolorContainer} ${styles.resizerContainer}`}
             >
               <div className={styles.sectionContainer}>
-                {/* <h2>Recipe Resizer</h2> */}
                 <h2>Scale up or scale down your recipe</h2>
                 <Link className={styles.linkBtn} to={'/RecipeResizer'}>
                   <span role="img" aria-label="scissors emoji">
@@ -54,7 +52,6 @@ const Home = () => {
             </section>
 
             <section className={styles.sectionContainer}>
-              {/* <h2>Temperature Calculator</h2> */}
               <h2>Convert Farenheit to Celcuis and Celcuis to Farenheit</h2>
               <Link className={styles.linkBtn} to={'/Temperature'}>
                 <span role="img" aria-label="thermometer emoji">

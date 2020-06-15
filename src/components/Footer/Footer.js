@@ -10,16 +10,14 @@ const Footer = () => (
         className={styles.footerContent}
         href="https://github.com/sophi-li/conversion-calc"
       >
-        {' '}
         Source Code
-      </a>{' '}
+      </a>
+      <a className={styles.footerContent} href="https://twitter.com/sophia_wyl">
+        Contact
+      </a>
       <Link className={styles.footerContent} to={'/Faq'}>
         FAQ
       </Link>
-      <a className={styles.footerContent} href="https://twitter.com/sophia_wyl">
-        {' '}
-        Contact{' '}
-      </a>{' '}
     </p>
   </footer>
 )

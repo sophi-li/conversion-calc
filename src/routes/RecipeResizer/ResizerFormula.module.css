@@ -25,12 +25,11 @@
 }
 
 .multiplierInput {
-  padding: 0.2rem 0.5rem;
+  padding: 0.3rem 0.3rem;
   font-size: 1rem;
   border: 1px solid gray;
   border-radius: 5px;
-  /* margin-left: 0.4rem; */
-  width: 60%;
+  width: 50%;
 }
 
 .divideButton,
@@ -59,14 +58,14 @@
   }
 
   .multiplierContainer {
-    /* margin-right: 15rem; */
+    margin-right: 5rem;
     width: 90%;
   }
 }
 
 @media screen and (min-width: 600px) {
   .multiplierContainer {
-    margin-right: 6rem;
+    margin-right: 7rem;
     width: 60%;
   }
 }
@@ -92,7 +91,6 @@
     display: flex;
     align-items: center;
     margin: 0;
-    /* width: 90%; */
   }
 
   .divideButton,
@@ -104,15 +102,6 @@
     max-width: 90%;
   }
 }
-
-/* @media screen and (min-width: 900px) {
-  .resizerFormulaContatiner {
-    flex-direction: row;
-  }
-  .multiplierInput {
-    margin-left: 0;
-  }
-} */
 
 @media screen and (min-width: 1000px) {
   .container {

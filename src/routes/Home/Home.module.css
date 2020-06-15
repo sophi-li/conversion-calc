@@ -95,8 +95,6 @@
   .sectionNavContainer section {
     flex-grow: 1;
     width: 33%;
-    /* flex-basis: 25%; */
-    /* flex-basis: 0; */
   }
 
   .resizerContainer {
