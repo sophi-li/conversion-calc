@@ -1,8 +1,21 @@
+.backgroundcolorContainer {
+  background-color: #fbf7ed;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
 .container {
   max-width: 90%;
   margin: 0 auto;
 }
 
+.RecipeConversionContainer {
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+}
 .textArea {
   border: 1px solid gray;
   border-radius: 5px;
@@ -16,14 +29,19 @@
 
 .submitButton {
   margin: 0.7rem 0.5rem 0.5rem 0.5rem;
-  padding: 0.2rem 0.5rem;
-  border: 1px solid #2a5aa7;
+  padding: 0.4rem 0.9rem;
   border-radius: 5px;
   font-size: 1rem;
+  border: 1px solid #388161;
+  background-color: #388161;
+  color: white;
+  letter-spacing: 0.3px;
+  text-decoration: none;
 }
 
 .submitButton:hover {
   cursor: pointer;
+  background-color: #1e4c3f;
 }
 
 @media screen and (min-width: 500px) {
@@ -32,9 +50,15 @@
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .submitBtnContainer {
-    margin-right: 20rem;
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    max-width: 50%;
   }
 }
 
@@ -50,7 +74,6 @@
   .submitBtnContainer {
     display: flex;
     align-items: center;
-    margin-right: 0;
   }
 }
 

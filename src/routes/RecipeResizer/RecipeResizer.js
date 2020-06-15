@@ -13,21 +13,23 @@ const RecipeResizer = () => {
 
   return (
     <Layout>
-      <div className={styles.container}>
-        <h2>Recipe Resizer</h2>
-        <div className={styles.recipeResizerContainer}>
-          <ResizerForumla updateSize={updateSize} />
-          <div>
-            <label>
-              <p>Result:</p>
-            </label>
-            <textarea
-              className={styles.textArea}
-              value={resize}
-              rows="20"
-              cols="40"
-              readOnly={true}
-            ></textarea>
+      <div className={styles.backgroundcolorContainer}>
+        <div className={styles.container}>
+          <h2 className={styles.title}>Recipe Resizer</h2>
+          <div className={styles.recipeResizerContainer}>
+            <ResizerForumla updateSize={updateSize} />
+            <div>
+              <label>
+                <p>Result:</p>
+              </label>
+              <textarea
+                className={styles.textArea}
+                value={resize}
+                rows="20"
+                cols="40"
+                readOnly={true}
+              ></textarea>
+            </div>
           </div>
         </div>
       </div>

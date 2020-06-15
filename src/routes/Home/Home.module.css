@@ -2,6 +2,7 @@
   font-size: 1rem;
   line-height: 1.3;
   text-align: left;
+  background-color: #fbf7ed;
 }
 
 .homeContentContainer {
@@ -15,30 +16,34 @@
   max-width: 90%;
 }
 
+.quickConvertTitle {
+  color: #1e4c3f;
+  font-size: 2rem;
+}
 .homeTitle,
 .tagline {
   margin: 0 auto;
   text-align: center;
 }
 
+.titleContainer {
+  /* background-color: #f3d250; */
+  padding-top: 4rem;
+}
 .homeTitle {
   font-size: 2.2rem;
-  color: #2a5aa7;
+  color: #1e4c3f;
 }
 
 .tagline {
   font-style: italic;
   font-size: 1.2rem;
-  margin: 1rem auto 2rem auto;
-}
-
-.backgroundcolorContainer {
-  background-color: #e3ebf7;
+  padding: 0.5rem 0 2rem 0;
 }
 
 .quickConvertContainer,
 .sectionContainer {
-  margin: 1rem auto;
+  margin: 0 auto;
 }
 
 .quickConvertContainer {
@@ -54,13 +59,25 @@
   margin-left: 2rem;
 }
 
+.colorSectionNavContainer {
+  padding-top: 2rem;
+  background-color: white;
+  padding-bottom: 1rem;
+}
+
 .linkBtn {
-  border: 1px solid #2a5aa7;
+  border: 1px solid #388161;
   border-radius: 5px;
   padding: 0.7rem 1rem;
-  background-color: #eee;
-  color: #222;
+  background-color: #388161;
+  color: white;
+  letter-spacing: 0.3px;
   text-decoration: none;
+}
+
+.linkBtn:hover {
+  cursor: pointer;
+  background-color: #1e4c3f;
 }
 
 @media screen and (min-width: 550px) {
@@ -98,7 +115,7 @@
   }
 
   .resizerContainer {
-    background-color: white;
+    /* background-color: white; */
   }
 
   .quickConvertResult {

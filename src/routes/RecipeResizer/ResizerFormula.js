@@ -102,9 +102,13 @@ const ResizerFormula = ({ updateSize }) => {
               onClick={handleSubmitMultiply}
               className={styles.multiplyButton}
             >
-              <span role="img" aria-label="multiply emoji">
+              {/* <span
+                className={styles.emoji}
+                role="img"
+                aria-label="multiply emoji"
+              >
                 ✖️
-              </span>{' '}
+              </span>{' '} */}
               Multiply
             </button>
           </div>
@@ -115,9 +119,9 @@ const ResizerFormula = ({ updateSize }) => {
               onClick={handleSubmitDivide}
               className={styles.divideButton}
             >
-              <span role="img" aria-label="divide emoji">
+              {/* <span role="img" aria-label="divide emoji">
                 ➗
-              </span>{' '}
+              </span>{' '} */}
               Divide
             </button>
           </div>

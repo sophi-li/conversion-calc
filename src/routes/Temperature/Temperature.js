@@ -9,11 +9,14 @@ const Temperature = ({ updateFtoC }) => {
   return (
     <Layout>
       <div>
-        <h2 className={styles.title}>Temperature Converter</h2>
+        <div className={styles.backgroundcolorContainer}>
+          <h2 className={styles.title}>Temperature Converter</h2>
 
-        <FarenheitToC />
-
-        <CelsiusToF />
+          <div className={styles.container}>
+            <FarenheitToC />
+            <CelsiusToF />
+          </div>
+        </div>
       </div>
     </Layout>
   )

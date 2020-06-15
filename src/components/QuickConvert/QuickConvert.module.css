@@ -16,13 +16,16 @@
 .convertButton {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  /* color: #2a5aa7; */
-  border: 1px solid #2a5aa7;
+  border: 1px solid #388161;
   border-radius: 5px;
+  background-color: #388161;
+  color: white;
+  letter-spacing: 0.3px;
 }
 
 .convertButton:hover {
   cursor: pointer;
+  background-color: #1e4c3f;
 }
 
 @media screen and (min-width: 550px) {
