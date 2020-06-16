@@ -1,6 +1,15 @@
+.colorContainer {
+  background-color: #fbf7ed;
+}
+
 .container {
+  padding: 2rem 0 4rem 0;
   max-width: 90%;
   margin: 0 auto;
+}
+
+.title {
+  text-align: center;
 }
 
 .faqContainer {
