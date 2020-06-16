@@ -28,11 +28,9 @@ const ConversionFormula = ({ updateRecipe }) => {
 
     if (currentUnit.length > 0) {
       let { qty, multiplier } = item
-      // const units = Object.keys(UNITS);
       let conversion
 
       switch (currentUnit[0].name) {
-        // case units.cup:
         case 'cup':
           conversion = Math.round(numericQuantity(qty) * multiplier)
           break
@@ -58,7 +56,6 @@ const ConversionFormula = ({ updateRecipe }) => {
 
   const convertFromGrams = (item) => {
     const { qty, multiplier } = item
-    // const units = Object.keys(UNITS);
     let conversion
 
     const currentUnit = UNITS.filter((unit) => {
