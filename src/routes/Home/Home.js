@@ -8,43 +8,35 @@ const Home = () => {
   return (
     <Layout>
       <div className={styles.homeContainer}>
-        <div className={styles.homeContentContainer}>
-          <section className={styles.backgroundcolorContainer}>
-            <div className={styles.quickConvertContainer}>
-              <h2 className={styles.quickConvertTitle}>Quick Convert</h2>
-              <QuickConvert />
-            </div>
-          </section>
-
-          <div className={styles.colorSectionNavContainer}>
-            <div className={styles.sectionNavContainer}>
-              <section className={styles.sectionContainer}>
-                <h2>Convert cups to grams or grams to cups</h2>
-                <Link className={styles.linkBtn} to={'/RecipeConversion'}>
-                  Recipe Calculator
-                </Link>
-              </section>
-
-              <section
-                className={`${styles.backgroundcolorContainer} ${styles.resizerContainer}`}
-              >
-                <div className={styles.sectionContainer}>
-                  <h2>Scale up or scale down your recipe</h2>
-                  <Link className={styles.linkBtn} to={'/RecipeResizer'}>
-                    Recipe Resizer
-                  </Link>
-                </div>
-              </section>
-
-              <section className={styles.sectionContainer}>
-                <h2>Convert Farenheit to Celcuis and Celcuis to Farenheit</h2>
-                <Link className={styles.linkBtn} to={'/Temperature'}>
-                  Temperature Calculator
-                </Link>
-              </section>
-            </div>
+        <section className={styles.homeContentContainer}>
+          <div className={styles.quickConvertContainer}>
+            <h2 className={styles.quickConvertTitle}>Quick Convert</h2>
+            <QuickConvert />
           </div>
-        </div>
+        </section>
+
+        <section className={styles.sectionNavContainer}>
+          <div className={styles.sectionContainer}>
+            <h2>Convert cups to grams or grams to cups</h2>
+            <Link className={styles.linkBtn} to={'/RecipeConversion'}>
+              Recipe Calculator
+            </Link>
+          </div>
+
+          <div className={styles.sectionContainer}>
+            <h2>Scale up or scale down your recipe</h2>
+            <Link className={styles.linkBtn} to={'/RecipeResizer'}>
+              Recipe Resizer
+            </Link>
+          </div>
+
+          <div className={styles.sectionContainer}>
+            <h2>Convert Farenheit to Celcuis and Celcuis to Farenheit</h2>
+            <Link className={styles.linkBtn} to={'/Temperature'}>
+              Temperature Calculator
+            </Link>
+          </div>
+        </section>
       </div>
     </Layout>
   )

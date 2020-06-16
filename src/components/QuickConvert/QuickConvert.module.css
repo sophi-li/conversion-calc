@@ -5,7 +5,7 @@
 .input {
   margin: 0 auto;
   margin-bottom: 0.7rem;
-  width: 80%;
+  width: 15rem;
   font-size: 1rem;
   border: 1px solid gray;
   border-radius: 5px;
@@ -29,39 +29,6 @@
 }
 
 .quickConvertResult {
-  text-align: left;
-  margin-left: 2rem;
-}
-
-@media screen and (min-width: 550px) {
-  .input {
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .input {
-    width: 60%;
-  }
-  .quickConvertResult {
-    margin-left: 5rem;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .input {
-    width: 50%;
-  }
-  .quickConvertResult {
-    margin-left: 10rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .input {
-    width: 40%;
-  }
-  .quickConvertResult {
-    margin-left: 15rem;
-  }
+  text-align: center;
+  margin-right: 20rem;
 }
