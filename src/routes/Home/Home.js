@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Home.module.css'
 import QuickConvert from '../../components/QuickConvert/QuickConvert'
 import Layout from '../../components/Layout'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-  const [ingredient, setIngredient] = useState('')
-
   return (
     <Layout>
       <div className={styles.homeContainer}>
@@ -14,12 +12,7 @@ const Home = () => {
           <section className={styles.backgroundcolorContainer}>
             <div className={styles.quickConvertContainer}>
               <h2 className={styles.quickConvertTitle}>Quick Convert</h2>
-              <QuickConvert updateIngredient={setIngredient} />
-              <span>
-                <p className={styles.quickConvertResult}>
-                  Result: {ingredient}
-                </p>
-              </span>
+              <QuickConvert />
             </div>
           </section>
 

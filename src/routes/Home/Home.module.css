@@ -96,9 +96,6 @@
   .sectionContainer {
     max-width: 70%;
   }
-  .quickConvertResult {
-    margin-left: 5rem;
-  }
 }
 
 @media screen and (min-width: 930px) {
@@ -112,14 +109,6 @@
   .sectionNavContainer section {
     flex-grow: 1;
     width: 33%;
-  }
-
-  .resizerContainer {
-    /* background-color: white; */
-  }
-
-  .quickConvertResult {
-    margin-left: 10rem;
   }
 }
 
@@ -139,9 +128,5 @@
 @media screen and (min-width: 1200px) {
   .sectionNavContainer {
     width: 85%;
-  }
-
-  .quickConvertResult {
-    margin-left: 15rem;
   }
 }

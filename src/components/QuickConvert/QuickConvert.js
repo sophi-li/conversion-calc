@@ -8,6 +8,8 @@ import { parseLine } from '../../utils'
 
 const QuickConvert = ({ updateIngredient }) => {
   const [recipe, setRecipe] = useState('1 cup sugar')
+  const [ingredient, setIngredient] = useState('')
+
   const parseRecipe = () => {
     return recipe
       .split('\n')
@@ -76,16 +78,22 @@ const QuickConvert = ({ updateIngredient }) => {
         let text = `${qty} ${scale} ${ingredient} `
 
         if (item.scale !== 'gram') {
-          return `${text} → ${convertToGrams(item)}`
+          return `${text} → ${convertToGrams(item)} ${ingredient}`
         }
-        return `${text} → ${convertFromGrams(item)}`
+        return `${text} → ${convertFromGrams(item)} ${ingredient}`
       })
       .join('\n')
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    updateIngredient(renderConvertedRecipe(parseRecipe(recipe)))
+    if (!recipe) {
+      setIngredient('Enter something!')
+      return
+    }
+
+    setIngredient(renderConvertedRecipe(parseRecipe(recipe)))
+
     setRecipe('')
   }
   const handleChange = (event) => {
@@ -112,6 +120,7 @@ const QuickConvert = ({ updateIngredient }) => {
           </button>
         </div>
       </form>
+      <p className={styles.quickConvertResult}>Result: {ingredient}</p>
     </div>
   )
 }
