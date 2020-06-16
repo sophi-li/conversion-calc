@@ -72,6 +72,13 @@ const QuickConvert = ({ updateIngredient }) => {
   }
 
   const renderConvertedRecipe = (parsedRecipe) => {
+    if (
+      Object.values(parsedRecipe[0]).includes(undefined) ||
+      typeof parsedRecipe[0] !== 'object'
+    ) {
+      return 'Could not read input. Try again with the format: quantity scale ingredient'
+    }
+
     return parsedRecipe
       .map((item) => {
         const { qty, scale, ingredient } = item
@@ -87,6 +94,7 @@ const QuickConvert = ({ updateIngredient }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
     if (!recipe) {
       setIngredient('Enter something!')
       return
