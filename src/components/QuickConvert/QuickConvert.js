@@ -61,9 +61,9 @@ const QuickConvert = ({ updateIngredient }) => {
       if (unit.variations.includes(item.scale)) {
         return true
       }
-
       return false
     })
+
     if (currentUnit.length > 0) {
       if (qty < 20) {
         conversion = `${((qty / multiplier) * 48).toFixed(2)} teaspoons`
@@ -79,17 +79,17 @@ const QuickConvert = ({ updateIngredient }) => {
   }
 
   const renderConvertedRecipe = (parsedRecipe) => {
-    if (
-      Object.values(parsedRecipe[0]).includes(undefined) ||
-      typeof parsedRecipe[0] !== 'object'
-    ) {
-      return 'Could not read input. Try again with the format: quantity scale ingredient'
-    }
     return parsedRecipe
       .map((item) => {
-        const { original } = item
-
+        const { ingredient, original } = item
         let text = `${original}`
+
+        if (item.scale === undefined) {
+          return `Couldn't convert "${item}".`
+        } else if (item.multiplier === undefined) {
+          return `Couldn't find "${ingredient}" in our database.`
+        }
+
         if (
           item.scale === 'gram' ||
           item.scale === 'grams' ||

@@ -65,7 +65,6 @@ const ConversionFormula = ({ updateRecipe }) => {
       if (unit.variations.includes(item.scale)) {
         return true
       }
-
       return false
     })
 
@@ -86,10 +85,15 @@ const ConversionFormula = ({ updateRecipe }) => {
   const renderConvertedRecipe = (parsedRecipe) => {
     return parsedRecipe
       .map((item) => {
-        // const { qty, scale, ingredient, original } = item
         const { original } = item
-
         let text = `${original}`
+
+        if (item.scale === undefined) {
+          return `${item}`
+        } else if (item.multiplier === undefined) {
+          return `${text} `
+        }
+
         if (
           item.scale === 'gram' ||
           item.scale === 'grams' ||
