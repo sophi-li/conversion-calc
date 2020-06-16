@@ -29,26 +29,25 @@ const QuickConvert = ({ updateIngredient }) => {
 
     if (currentUnit.length > 0) {
       let { qty, multiplier } = item
-      const units = Object.keys(UNITS)
       let conversion
 
-      switch (currentUnit.name) {
-        case units.cup:
+      switch (currentUnit[0].name) {
+        case 'cup':
           conversion = Math.round(numericQuantity(qty) * multiplier)
           break
 
-        case units.tablespoon:
+        case 'tablespoon':
           conversion = Math.round((numericQuantity(qty) * multiplier) / 16)
           break
 
-        case units.teaspoon:
-          conversion = Math.round((numericQuantity(qty) * multiplier) / 3)
+        case 'teaspoon':
+          conversion = Math.round((numericQuantity(qty) * multiplier) / 48)
           break
 
         default:
+          conversion = 0
           break
       }
-
       return `${conversion} gram${conversion !== 1 && 's'}`
     }
     return null
@@ -56,19 +55,27 @@ const QuickConvert = ({ updateIngredient }) => {
 
   const convertFromGrams = (item, to) => {
     const { qty, multiplier } = item
-    const units = Object.keys(UNITS)
     let conversion
-    switch (to) {
-      case units.cup:
-        conversion = `${qty / multiplier.toFixed(2)} cups`
-        break
-      case units.tablespoon:
+
+    const currentUnit = UNITS.filter((unit) => {
+      if (unit.variations.includes(item.scale)) {
+        return true
+      }
+
+      return false
+    })
+    if (currentUnit.length > 0) {
+      if (qty < 20) {
+        conversion = `${((qty / multiplier) * 48).toFixed(2)} teaspoons`
+      } else if (qty < 50) {
         conversion = `${((qty / multiplier) * 16).toFixed(2)} tablespoons`
-        break
-      default:
-        break
+      } else {
+        conversion = `${(qty / multiplier).toFixed(2)} cups`
+      }
+
+      return conversion
     }
-    return conversion
+    return null
   }
 
   const renderConvertedRecipe = (parsedRecipe) => {
@@ -78,16 +85,22 @@ const QuickConvert = ({ updateIngredient }) => {
     ) {
       return 'Could not read input. Try again with the format: quantity scale ingredient'
     }
-
     return parsedRecipe
       .map((item) => {
-        const { qty, scale, ingredient } = item
-        let text = `${qty} ${scale} ${ingredient} `
+        const { original } = item
 
-        if (item.scale !== 'gram') {
-          return `${text} → ${convertToGrams(item)} ${ingredient}`
+        let text = `${original}`
+        if (
+          item.scale === 'gram' ||
+          item.scale === 'grams' ||
+          item.scale === 'g' ||
+          item.scale === 'gm' ||
+          item.scale === 'g.'
+        ) {
+          return `${text} (${convertFromGrams(item)})`
         }
-        return `${text} → ${convertFromGrams(item)} ${ingredient}`
+
+        return `${text} (${convertToGrams(item)})`
       })
       .join('\n')
   }
