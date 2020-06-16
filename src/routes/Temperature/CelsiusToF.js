@@ -10,13 +10,13 @@ const CelsiusToF = () => {
     setCelsiusToF(event.target.value)
   }
 
-  function updateCelsius(tempC) {
-    setCelsius(tempC)
-  }
-
   function handleSubmitCelsiusToF(event) {
     event.preventDefault()
-    updateCelsius(`${Math.round(celsiusToF * (9 / 5) + 32)} °F`)
+    if (!celsiusToF) {
+      setCelsius('Enter degrees in Celsius')
+      return
+    }
+    setCelsius(`${Math.round(celsiusToF * (9 / 5) + 32)} °F`)
     setCelsiusToF('')
   }
 

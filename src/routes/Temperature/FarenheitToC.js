@@ -10,12 +10,13 @@ const FarenheitToC = () => {
     setFarenheitToC(event.target.value)
   }
 
-  function udpdateFarenheit(tempF) {
-    setFarenheit(tempF)
-  }
   function handleSubmitFarenheitToC(event) {
     event.preventDefault()
-    udpdateFarenheit(`${Math.round((farenheitToC - 32) * (5 / 9))} °C`)
+    if (!farenheitToC) {
+      setFarenheit('Enter degrees in Farenheit')
+      return
+    }
+    setFarenheit(`${Math.round((farenheitToC - 32) * (5 / 9))} °C`)
     setFarenheitToC('')
   }
   return (
