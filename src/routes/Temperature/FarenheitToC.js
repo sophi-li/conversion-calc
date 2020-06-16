@@ -19,13 +19,11 @@ const FarenheitToC = () => {
     setFarenheitToC('')
   }
   return (
-    // <div className={styles.backgroundcolorContainer}>
     <div className={styles.temperatureContainer}>
       <form onSubmit={handleSubmitFarenheitToC}>
         <label>
           <h3>Farenheit to Celcius</h3>
         </label>
-
         <input
           type="number"
           value={farenheitToC}
@@ -33,13 +31,11 @@ const FarenheitToC = () => {
           className={styles.input}
           placeholder="e.g. 350"
         />
-
         <button type="submit" className={styles.submitButton}>
           Convert to Celcius
         </button>
       </form>
       <p>Result: {farenheit}</p>
-      {/* </div> */}
     </div>
   )
 }

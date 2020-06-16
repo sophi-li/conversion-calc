@@ -7,13 +7,14 @@
 .title {
   text-align: center;
 }
-.title,
+
 .temperatureContainer {
   max-width: 90%;
-  margin: 2rem auto;
+  margin: 0 auto;
 }
 
 .container {
+  margin-left: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,11 +22,11 @@
 
 .input {
   font-size: 1rem;
-  margin-right: 1rem;
-  font-size: 1rem;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 0.4rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
 }
 
 .submitButton {
@@ -45,36 +46,7 @@
 }
 
 @media screen and (min-width: 500px) {
-  .title,
-  .temperatureContainer {
-    max-width: 70%;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .title,
-  .temperatureContainer {
-    max-width: 60%;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .title,
-  .temperatureContainer {
-    max-width: 50%;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .title,
-  .temperatureContainer {
-    max-width: 40%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .title,
-  .temperatureContainer {
-    max-width: 35%;
+  .container {
+    margin-left: 0;
   }
 }

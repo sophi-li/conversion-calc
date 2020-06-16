@@ -21,7 +21,6 @@ const CelsiusToF = () => {
   }
 
   return (
-    // <div className={styles.backgroundcolorContainer}>
     <div className={styles.temperatureContainer}>
       <form onSubmit={handleSubmitCelsiusToF}>
         <label>
@@ -40,7 +39,6 @@ const CelsiusToF = () => {
       </form>
       <p>Result: {celsius}</p>
     </div>
-    // </div>
   )
 }
 
