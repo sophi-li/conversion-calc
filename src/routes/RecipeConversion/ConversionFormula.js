@@ -19,11 +19,7 @@ const ConversionFormula = ({ updateRecipe }) => {
 
   const convertToGrams = (item) => {
     const currentUnit = UNITS.filter((unit) => {
-      if (unit.variations.includes(item.scale)) {
-        return true
-      }
-
-      return false
+      return unit.variations.includes(item.scale)
     })
 
     if (currentUnit.length > 0) {
