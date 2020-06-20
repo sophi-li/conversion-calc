@@ -81,9 +81,9 @@ const ConversionFormula = ({ updateRecipe }) => {
         const { original } = item
         let text = `${original}`
 
-        if (item.scale === undefined) {
+        if (!item.scale) {
           return `${item}`
-        } else if (item.multiplier === undefined) {
+        } else if (!item.multiplier) {
           return `${text} `
         }
 

@@ -81,9 +81,9 @@ const QuickConvert = ({ updateIngredient }) => {
         const { ingredient, original } = item
         let text = `${original}`
 
-        if (item.scale === undefined) {
+        if (!item.scale) {
           return `Couldn't convert "${item}".`
-        } else if (item.multiplier === undefined) {
+        } else if (!item.multiplier) {
           return `Couldn't find "${ingredient}" in our database.`
         }
 
