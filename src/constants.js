@@ -50,7 +50,10 @@ export const UNITS = [
     name: 'tablespoon',
     variations: ['tablespoon', 'tablespoons', 'tbs', 'tbs.'],
   },
-  { name: 'teaspoon', variations: ['teaspoon', 'teaspoons', 'tsp', 'tsp.'] },
+  {
+    name: 'teaspoon',
+    variations: ['teaspoon', 'teaspoons', 'tsp', 'tsp.', 'tspn.', 'tspn'],
+  },
   { name: 'cup', variations: ['cup', 'cups', 'c.', 'c'] },
   { name: 'gram', variations: ['gram', 'grams', 'g.', 'g', 'gm'] },
 ]

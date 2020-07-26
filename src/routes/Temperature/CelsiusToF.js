@@ -4,7 +4,8 @@ import styles from './Temperature.module.css'
 
 const CelsiusToF = () => {
   const [celsiusToF, setCelsiusToF] = useState('')
-  const [celsius, setCelsius] = useState('')
+  const [farenheit, setFarenheit] = useState('')
+  const [originalCelsius, setOriginalCelsius] = useState('')
 
   function handleChangeCelsiusToF(event) {
     setCelsiusToF(event.target.value)
@@ -13,10 +14,11 @@ const CelsiusToF = () => {
   function handleSubmitCelsiusToF(event) {
     event.preventDefault()
     if (!celsiusToF) {
-      setCelsius('Enter degrees in Celsius')
+      setFarenheit('Enter degrees in Celsius')
       return
     }
-    setCelsius(`${Math.round(celsiusToF * (9 / 5) + 32)} °F`)
+    setFarenheit(`${Math.round(celsiusToF * (9 / 5) + 32)} °F`)
+    setOriginalCelsius(`${celsiusToF} °C → `)
     setCelsiusToF('')
   }
 
@@ -37,7 +39,9 @@ const CelsiusToF = () => {
           Convert to Farenheit
         </button>
       </form>
-      <p>Result: {celsius}</p>
+      <p>
+        Result: {originalCelsius} {farenheit}
+      </p>
     </div>
   )
 }
